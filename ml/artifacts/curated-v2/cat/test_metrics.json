@@ -1,0 +1,979 @@
+{
+  "all_files": {
+    "accuracy": 0.6049382716049383,
+    "macro_f1": 0.6043399745154131,
+    "per_class": [
+      {
+        "label": "Dental Disease",
+        "precision": 0.8235294117647058,
+        "recall": 0.875,
+        "f1": 0.8484848484848485,
+        "support": 16.0
+      },
+      {
+        "label": "Ear Mites",
+        "precision": 0.5555555555555556,
+        "recall": 0.45454545454545453,
+        "f1": 0.5,
+        "support": 11.0
+      },
+      {
+        "label": "Eye Infection",
+        "precision": 0.55,
+        "recall": 0.7333333333333333,
+        "f1": 0.6285714285714286,
+        "support": 15.0
+      },
+      {
+        "label": "Fungal skin condition",
+        "precision": 0.3,
+        "recall": 0.16666666666666666,
+        "f1": 0.21428571428571427,
+        "support": 18.0
+      },
+      {
+        "label": "Normal-looking skin",
+        "precision": 1.0,
+        "recall": 0.7272727272727273,
+        "f1": 0.8421052631578948,
+        "support": 11.0
+      },
+      {
+        "label": "Scabies",
+        "precision": 0.47058823529411764,
+        "recall": 0.8,
+        "f1": 0.5925925925925927,
+        "support": 10.0
+      }
+    ],
+    "confusion_matrix": [
+      [
+        14.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        5.0,
+        2.0,
+        3.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.0,
+        11.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        2.0,
+        6.0,
+        3.0,
+        0.0,
+        6.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        8.0,
+        2.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        8.0
+      ]
+    ],
+    "matrix_order": [
+      "Dental Disease",
+      "Ear Mites",
+      "Eye Infection",
+      "Fungal skin condition",
+      "Normal-looking skin",
+      "Scabies"
+    ],
+    "count": 81
+  },
+  "unique_files": {
+    "accuracy": 0.6049382716049383,
+    "macro_f1": 0.6043399745154131,
+    "per_class": [
+      {
+        "label": "Dental Disease",
+        "precision": 0.8235294117647058,
+        "recall": 0.875,
+        "f1": 0.8484848484848485,
+        "support": 16.0
+      },
+      {
+        "label": "Ear Mites",
+        "precision": 0.5555555555555556,
+        "recall": 0.45454545454545453,
+        "f1": 0.5,
+        "support": 11.0
+      },
+      {
+        "label": "Eye Infection",
+        "precision": 0.55,
+        "recall": 0.7333333333333333,
+        "f1": 0.6285714285714286,
+        "support": 15.0
+      },
+      {
+        "label": "Fungal skin condition",
+        "precision": 0.3,
+        "recall": 0.16666666666666666,
+        "f1": 0.21428571428571427,
+        "support": 18.0
+      },
+      {
+        "label": "Normal-looking skin",
+        "precision": 1.0,
+        "recall": 0.7272727272727273,
+        "f1": 0.8421052631578948,
+        "support": 11.0
+      },
+      {
+        "label": "Scabies",
+        "precision": 0.47058823529411764,
+        "recall": 0.8,
+        "f1": 0.5925925925925927,
+        "support": 10.0
+      }
+    ],
+    "confusion_matrix": [
+      [
+        14.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        5.0,
+        2.0,
+        3.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.0,
+        11.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        2.0,
+        6.0,
+        3.0,
+        0.0,
+        6.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        8.0,
+        2.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        8.0
+      ]
+    ],
+    "matrix_order": [
+      "Dental Disease",
+      "Ear Mites",
+      "Eye Infection",
+      "Fungal skin condition",
+      "Normal-looking skin",
+      "Scabies"
+    ],
+    "count": 81
+  },
+  "group_balanced": {
+    "accuracy": 0.6049382716049383,
+    "macro_f1": 0.6043399745154131,
+    "per_class": [
+      {
+        "label": "Dental Disease",
+        "precision": 0.8235294117647058,
+        "recall": 0.875,
+        "f1": 0.8484848484848485,
+        "support": 16.0
+      },
+      {
+        "label": "Ear Mites",
+        "precision": 0.5555555555555556,
+        "recall": 0.45454545454545453,
+        "f1": 0.5,
+        "support": 11.0
+      },
+      {
+        "label": "Eye Infection",
+        "precision": 0.55,
+        "recall": 0.7333333333333333,
+        "f1": 0.6285714285714286,
+        "support": 15.0
+      },
+      {
+        "label": "Fungal skin condition",
+        "precision": 0.3,
+        "recall": 0.16666666666666666,
+        "f1": 0.21428571428571427,
+        "support": 18.0
+      },
+      {
+        "label": "Normal-looking skin",
+        "precision": 1.0,
+        "recall": 0.7272727272727273,
+        "f1": 0.8421052631578948,
+        "support": 11.0
+      },
+      {
+        "label": "Scabies",
+        "precision": 0.47058823529411764,
+        "recall": 0.8,
+        "f1": 0.5925925925925927,
+        "support": 10.0
+      }
+    ],
+    "confusion_matrix": [
+      [
+        14.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        5.0,
+        2.0,
+        3.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.0,
+        11.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        2.0,
+        6.0,
+        3.0,
+        0.0,
+        6.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        8.0,
+        2.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        8.0
+      ]
+    ],
+    "matrix_order": [
+      "Dental Disease",
+      "Ear Mites",
+      "Eye Infection",
+      "Fungal skin condition",
+      "Normal-looking skin",
+      "Scabies"
+    ],
+    "count": 81
+  },
+  "independent_groups": 81,
+  "loss": 0.9240838377564041,
+  "cohorts": {
+    "new_source_holdout_unverified_case_independence": {
+      "all_files": {
+        "accuracy": 0.7272727272727273,
+        "macro_f1": 0.14035087719298248,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Ear Mites",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1": 0.8421052631578948,
+            "support": 11.0
+          },
+          {
+            "label": "Scabies",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            8.0,
+            2.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Ear Mites",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Normal-looking skin",
+          "Scabies"
+        ],
+        "count": 11
+      },
+      "unique_files": {
+        "accuracy": 0.7272727272727273,
+        "macro_f1": 0.14035087719298248,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Ear Mites",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1": 0.8421052631578948,
+            "support": 11.0
+          },
+          {
+            "label": "Scabies",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            8.0,
+            2.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Ear Mites",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Normal-looking skin",
+          "Scabies"
+        ],
+        "count": 11
+      },
+      "group_balanced": {
+        "accuracy": 0.7272727272727273,
+        "macro_f1": 0.14035087719298248,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Ear Mites",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1": 0.8421052631578948,
+            "support": 11.0
+          },
+          {
+            "label": "Scabies",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            8.0,
+            2.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Ear Mites",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Normal-looking skin",
+          "Scabies"
+        ],
+        "count": 11
+      },
+      "independent_groups": 11,
+      "loss": 0.5433091250332919
+    },
+    "previously_exposed_test": {
+      "all_files": {
+        "accuracy": 0.5857142857142857,
+        "macro_f1": 0.4732130832130832,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.8235294117647058,
+            "recall": 0.875,
+            "f1": 0.8484848484848485,
+            "support": 16.0
+          },
+          {
+            "label": "Ear Mites",
+            "precision": 0.5555555555555556,
+            "recall": 0.45454545454545453,
+            "f1": 0.5,
+            "support": 11.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.55,
+            "recall": 0.7333333333333333,
+            "f1": 0.6285714285714286,
+            "support": 15.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.3333333333333333,
+            "recall": 0.16666666666666666,
+            "f1": 0.2222222222222222,
+            "support": 18.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Scabies",
+            "precision": 0.5333333333333333,
+            "recall": 0.8,
+            "f1": 0.64,
+            "support": 10.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            14.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            5.0,
+            2.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0,
+            11.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            2.0,
+            6.0,
+            3.0,
+            0.0,
+            6.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0,
+            8.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Ear Mites",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Normal-looking skin",
+          "Scabies"
+        ],
+        "count": 70
+      },
+      "unique_files": {
+        "accuracy": 0.5857142857142857,
+        "macro_f1": 0.4732130832130832,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.8235294117647058,
+            "recall": 0.875,
+            "f1": 0.8484848484848485,
+            "support": 16.0
+          },
+          {
+            "label": "Ear Mites",
+            "precision": 0.5555555555555556,
+            "recall": 0.45454545454545453,
+            "f1": 0.5,
+            "support": 11.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.55,
+            "recall": 0.7333333333333333,
+            "f1": 0.6285714285714286,
+            "support": 15.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.3333333333333333,
+            "recall": 0.16666666666666666,
+            "f1": 0.2222222222222222,
+            "support": 18.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Scabies",
+            "precision": 0.5333333333333333,
+            "recall": 0.8,
+            "f1": 0.64,
+            "support": 10.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            14.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            5.0,
+            2.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0,
+            11.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            2.0,
+            6.0,
+            3.0,
+            0.0,
+            6.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0,
+            8.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Ear Mites",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Normal-looking skin",
+          "Scabies"
+        ],
+        "count": 70
+      },
+      "group_balanced": {
+        "accuracy": 0.5857142857142857,
+        "macro_f1": 0.4732130832130832,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.8235294117647058,
+            "recall": 0.875,
+            "f1": 0.8484848484848485,
+            "support": 16.0
+          },
+          {
+            "label": "Ear Mites",
+            "precision": 0.5555555555555556,
+            "recall": 0.45454545454545453,
+            "f1": 0.5,
+            "support": 11.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.55,
+            "recall": 0.7333333333333333,
+            "f1": 0.6285714285714286,
+            "support": 15.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.3333333333333333,
+            "recall": 0.16666666666666666,
+            "f1": 0.2222222222222222,
+            "support": 18.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Scabies",
+            "precision": 0.5333333333333333,
+            "recall": 0.8,
+            "f1": 0.64,
+            "support": 10.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            14.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            5.0,
+            2.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0,
+            11.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            2.0,
+            6.0,
+            3.0,
+            0.0,
+            6.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0,
+            8.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Ear Mites",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Normal-looking skin",
+          "Scabies"
+        ],
+        "count": 70
+      },
+      "independent_groups": 70,
+      "loss": 0.9839198333876473
+    }
+  },
+  "model_sha256": "f63be437457e90c68af121faa10f9445c506ad77951677651e01bd1c99713698",
+  "note": "Contains previously exposed v1 test images. New-source patient independence is not verified. Changed taxonomy prevents direct headline comparison to v1."
+}

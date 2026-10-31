@@ -1,0 +1,69 @@
+"""Original reference summaries; no runtime network requests or copied articles."""
+VERSION = 'reference-chat-1.1'
+CAT = 'https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/'
+DOG = 'https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-information/'
+SOURCES = {
+ 'petmd-hotspots': ('PetMD — Hot spots on dogs', 'https://www.petmd.com/dog/general-health/hot-spots-dogs', '2026-10-19'),
+ 'petmd-eye-injury': ('PetMD — Dog eye injuries', 'https://www.petmd.com/dog/general-health/most-common-types-dog-eye-injuries', '2026-10-19'),
+ 'vca-cone': ('VCA — Elizabethan collars in dogs', 'https://vcahospitals.com/champions-northwest/know-your-pet/elizabethan-collars-in-dogs', '2026-10-19'),
+ 'avma-firstaid': ('AVMA — Pet first aid', 'https://ebusiness.avma.org/files/ProductDownloads/mcm-client-brochures-pet-first-aid-2025.pdf', '2026-10-19'),
+ 'cat-eyes': ('Cornell — Conjunctivitis', CAT+'conjunctivitis', '2026-10-19'),
+ 'dog-eyes': ('Merck — Disorders of the conjunctiva in dogs', 'https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/disorders-of-the-conjunctiva-in-dogs', '2026-10-19'),
+ 'prevention': ('Merck — Preventive care and husbandry', 'https://www.merckvetmanual.com/management-and-nutrition/preventative-health-care-and-husbandry-in-small-animals/overview-of-preventative-health-care-and-husbandry-in-small-animals','2026-10-18'),
+ 'catdental': ('Cornell — Feline dental disease', CAT+'feline-dental-disease','2026-10-18'),
+ 'catvaccines': ('Cornell — Feline vaccines', CAT+'feline-vaccines-benefits-and-risks','2026-10-18'),
+ 'appetite': ('Cornell — Loss of appetite in cats', CAT+'anorexia', '2026-10-18'),
+ 'catfood': ('Cornell — Feeding your cat', CAT+'feeding-your-cat', '2026-10-18'),
+ 'dogfood': ('Cornell — Re-evaluating your dog’s diet', DOG+'re-evaluating-your-dog-s-diet', '2026-10-18'),
+ 'routine': ('Merck — Routine health care of dogs', 'https://www.merckvetmanual.com/dog-owners/routine-care-of-dogs/routine-health-care-of-dogs', '2026-10-18'),
+ 'visit': ('Merck — When to see a veterinarian', 'https://www.merckvetmanual.com/multimedia/table/when-to-see-a-veterinarian', '2026-10-18'),
+ 'emergency': ('Cornell — Emergency and critical care', 'https://www.vet.cornell.edu/hospitals/services/emergency-and-critical-care-0', '2026-10-18'),
+ 'litter': ('Cornell — House soiling', CAT+'feline-behavior-problems-house-soiling', '2026-10-18'),
+ 'training': ('Merck — Behavior modification in dogs', 'https://www.merckvetmanual.com/dog-owners/behavior-of-dogs/behavior-modification-in-dogs', '2026-10-18'),
+ 'groom': ('Cornell — Loving care for older cats', CAT+'loving-care-older-cats', '2026-10-07'),
+ 'skin': ('Merck — Diagnosis of skin diseases', 'https://www.merckvetmanual.com/integumentary-system/integumentary-system-introduction/diagnosis-of-skin-diseases-in-small-animals', '2026-10-07'),
+}
+
+def source_rows(ids):
+ return [dict(id=k,title=SOURCES[k][0],url=SOURCES[k][1],checked_on=SOURCES[k][2]) for k in dict.fromkeys(ids)]
+
+def entry(key,title,species,aliases,answer,sources,questions=(),clinical=False):
+ return dict(id=key,title=title,species=species,aliases=aliases.split('|'),answer=answer,sources=sources.split(),questions=list(questions),clinical=clinical)
+
+DURATION = ('duration','How long has this been happening? You can say “6 hours”, “2 days”, or “since yesterday”.')
+DRINKING = ('drinking','Is your pet drinking normally, drinking less, or not drinking at all?')
+OTHER = ('other','What other changes have you noticed, such as vomiting or lower energy? You can also say “no other changes”.')
+ENTRIES = [
+ entry('enrichment','Play and enrichment','both','exercise|play|playing|toys|bored|boredom|enrichment','Provide opportunities for species-appropriate play, exploration, and problem solving. Enrichment helps occupy pets and reduces boredom. This reference does not prescribe a universal exercise duration; discuss individual limits with your veterinarian when health or mobility is a concern.','prevention'),
+ entry('travel','Travelling with pets','both','travel|travelling|traveling|car ride|flight|airline|transport','Secure your pet during car journeys rather than allowing it to ride unrestrained. Check current airline and destination requirements before travel; these vary. Discuss travel-related anxiety or sickness with your veterinarian.','prevention'),
+ entry('home','A safer home','both','safe home|hazards|pet proof|petproof|household safety','Keep medicines, cleaning products, hazardous plants, and electrical cords inaccessible. Provide shelter, ventilation, fresh water, and protection from extreme temperatures. Check windows and other escape or injury hazards.','prevention'),
+ entry('dental-cat','Cat dental care','cat','brush teeth|teeth|tooth|dental|toothpaste|bad breath','Dental disease can cause pain and affect eating. Ask your veterinarian about preventive dental care and examination, particularly with discomfort, bad breath, or appetite changes. This guide cannot tell which dental condition is present.','catdental'),
+ entry('vaccines-cat','Cat vaccinations','cat','vaccine|vaccines|vaccination|vaccinations|booster|rabies','Vaccination decisions depend on age, health, and exposure risk. Review your cat’s records and lifestyle with your veterinarian to choose vaccines and timing; this guide does not prescribe a universal schedule.','catvaccines'),
+ entry('appetite-cat','Loss of appetite','cat','not eating|refusing food|lost appetite|stopped eating|off food|less food|not hungry|skipping meals','Contact your veterinarian promptly when a cat stops eating. Dental pain, illness, food changes, and stress are possible explanations; this guide cannot determine the cause. Do not force food into the mouth. Young kittens need especially prompt attention.','appetite',(DURATION,DRINKING,OTHER),True),
+ entry('appetite-dog','Loss of appetite','dog','not eating|refusing food|lost appetite|stopped eating|off food|less food|not hungry|skipping meals','Reduced appetite deserves veterinary advice, even without other symptoms. Contact your veterinarian today rather than waiting for the chat to establish a cause.','visit',(DURATION,DRINKING,OTHER),True),
+ entry('sleep','Sleep and energy','both','sleep|sleeping|slept|tired|energy|lethargy|less playful|inactive','Hours asleep alone cannot tell us whether a pet is well. A new increase in sleep together with reluctance to play warrants veterinary advice within 24 hours.','visit',(('change','Is this more sleep than usual, or are you asking about the normal routine?'),DURATION,OTHER),True),
+ entry('skin','Itching and skin changes','both','itch|itching|scratch|scratching|rash|hair loss|bald|fungal|ringworm|skin|licking','Different skin conditions can look alike. An examination and sometimes tests are needed to identify the cause. Record where it started, whether it is spreading, and any itching or licking. This guide cannot confirm fungus, ringworm, or another diagnosis from a description or photo.','skin',(DURATION,('location','Which areas are affected, and is the problem spreading?')),True),
+ entry('water','Drinking changes','both','water|thirst|thirsty|drinking|drink','A marked change in drinking needs veterinary advice. Tell the clinic whether intake has increased or decreased and whether urination has changed.','visit',(('drinking','Is your pet drinking more, less, or nothing?'),DURATION),True),
+ entry('digestion','Vomiting or diarrhoea','both','vomit|vomiting|throwing up|diarrhea|diarrhoea|loose stools|loose motions','Vomiting or diarrhoea lasting more than 24 hours warrants veterinary attention. Pain, blood, or marked weakness needs earlier help. This guide cannot select a treatment or establish a safe waiting period for your pet.','visit',(DURATION,OTHER),True),
+ entry('urine','Urination concerns','both','urine|urinating|pee|peeing|urination','Difficulty passing urine needs immediate veterinary attention. If your pet can pass urine but the pattern has changed, contact your veterinarian and describe the change.','emergency',(('urine','Is urine coming out normally, only in drops, or not at all?'),),True),
+ entry('eyes','Eye changes','both','eye|eyes|squinting|cloudy eyes|eye discharge','Cloudiness, squinting, or changes in vision need prompt veterinary assessment. Avoid trying to diagnose the cause from appearance alone.','visit',(DURATION,),True),
+ entry('ears','Ear concerns','both','ear|ears|head shaking|ear discharge','Persistent head shaking or discharge should be discussed with a veterinarian. Describe when it began and whether your pet seems uncomfortable.','visit',(DURATION,),True),
+ entry('cough','Coughing and sneezing','both','cough|coughing|sneeze|sneezing','Persistent coughing or sneezing warrants veterinary advice. Breathing difficulty is an emergency rather than a routine cough question.','visit',(DURATION,),True),
+ entry('food-cat','Choosing cat food','cat','food|feed|feeding|diet|nutrition|kitten food|homemade|treats|raw','Choose a complete, balanced cat food suitable for the life stage on its label. Keep fresh water available. Homemade diets need qualified nutrition guidance, and raw food carries infection risks. Ask your vet about portions for your cat’s weight and needs; a universal portion is not reliable.','catfood'),
+ entry('milk','Milk for cats','cat','milk|dairy|lactose','Milk is not a good routine treat for cats: many cannot digest lactose well and develop digestive upset. Offer fresh water and a suitable cat food instead.','catfood'),
+ entry('food-dog','Choosing dog food','dog','food|feed|feeding|diet|nutrition|homemade|treats|chicken|rice|puppy food','Choose a complete, balanced food for your dog’s life stage. Make diet changes gradually. Chicken and rice alone is not a complete long-term diet, and home-prepared meals need a veterinary nutritionist’s formulation. Treats should not displace balanced meals.','dogfood'),
+ entry('groom-cat','Brushing a cat','cat','groom|grooming|brush|brushing|coat|comb|fur','Gentle brushing or combing can help remove loose hair, especially when an older cat grooms less. A decline in grooming may reflect discomfort or health changes; discuss that change with your veterinarian.','groom'),
+ entry('groom-dog','Brushing and bathing a dog','dog','groom|grooming|brush|brushing|coat|comb|fur|bath|bathing|shampoo','Regular brushing removes loose hair and helps prevent mats. Use pet shampoo for bathing. Do not cut mats with scissors because skin can be injured; ask a groomer or veterinarian for help with tight mats.','routine'),
+ entry('dental-dog','Dog dental care','dog','brush teeth|teeth|tooth|dental|toothpaste|bad breath','Regular brushing with a toothbrush and toothpaste made for dogs supports dental care. Veterinary dental checks and cleaning may also be needed.','routine'),
+ entry('vaccines-dog','Dog vaccinations','dog','vaccine|vaccines|vaccination|vaccinations|booster|rabies','Your veterinarian should tailor vaccines and boosters to your dog’s age, location, and lifestyle. Bring existing vaccination records to the appointment.','routine'),
+ entry('parasites-dog','Dog parasite prevention','dog','flea|fleas|tick|ticks|worms|deworm|parasite|heartworm','Ask your veterinarian about parasite testing and prevention suited to your dog. Clean up faeces and wash hands after handling waste.','routine'),
+ entry('checkup-dog','Routine dog checkups','dog','checkup|checkups|routine vet|annual exam|senior check','Routine examinations help identify changes. Puppies and older dogs may need more frequent visits than healthy adults; agree a schedule with your veterinarian.','routine'),
+ entry('litter','Litter box problems','cat','litter|litterbox|soiling|toilet|peeing outside|poop outside','House soiling can reflect a medical problem, box aversion, or location preferences. Keep boxes clean and easy to reach; do not punish accidents. A new problem deserves veterinary assessment, especially when urination appears uncomfortable.','litter',(('change','Is this a new problem, and is your cat passing urine normally?'),),True),
+ entry('training','Reward-based dog training','dog','train|training|sit|stay|barking|bark|jumping|obedience|reward|behavior|behaviour','Reward the behaviour you want promptly and practise a useful alternative to an unwanted behaviour. For example, reward a calm sit instead of jumping. Avoid frightening or physically punishing the dog. Persistent fear or aggression calls for a qualified behaviour professional.','training'),
+]
+
+# Short original summaries; these support discussion, not subtype classification.
+EYE_NOTES = {
+ 'cat': [{'topic':'Possible causes of cat eye changes', 'source_ids':['cat-eyes'], 'summary':'Conjunctivitis is inflammation of the tissue lining the eyelids. Signs can affect one or both eyes and include redness, swelling, blinking, squinting, and watery or thicker discharge. Possible causes include viral or bacterial infections and environmental irritation or allergy. Herpesvirus and calicivirus are among infectious causes. These signs do not identify the cause in an individual cat. Eye discomfort with discharge needs veterinary assessment to exclude more serious disorders.'}],
+ 'dog': [{'topic':'Possible causes of dog eye changes', 'source_ids':['dog-eyes'], 'summary':'Conjunctivitis can cause redness, swelling, discharge and discomfort. Possible causes include infection, environmental irritation, allergens, foreign objects and eyelid abnormalities. A one-eye problem can involve a foreign object, tear-sac inflammation or dry eye; both-eye involvement can occur with infections as well as irritants or allergens. These patterns are clues, not a diagnosis. Appearance alone is insufficient: veterinary examination and sometimes tear tests or other tests are needed to identify the cause.'}],
+}

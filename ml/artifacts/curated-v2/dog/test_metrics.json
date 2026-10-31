@@ -1,0 +1,1186 @@
+{
+  "all_files": {
+    "accuracy": 0.7051282051282052,
+    "macro_f1": 0.6935364174995512,
+    "per_class": [
+      {
+        "label": "Dental Disease",
+        "precision": 0.9375,
+        "recall": 1.0,
+        "f1": 0.967741935483871,
+        "support": 15.0
+      },
+      {
+        "label": "Eye Infection",
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "support": 10.0
+      },
+      {
+        "label": "Fungal skin condition",
+        "precision": 0.3333333333333333,
+        "recall": 0.25,
+        "f1": 0.28571428571428575,
+        "support": 12.0
+      },
+      {
+        "label": "Hot Spots",
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.6666666666666665,
+        "support": 10.0
+      },
+      {
+        "label": "Mange",
+        "precision": 0.47619047619047616,
+        "recall": 0.8333333333333334,
+        "f1": 0.6060606060606061,
+        "support": 12.0
+      },
+      {
+        "label": "Normal-looking skin",
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 8.0
+      },
+      {
+        "label": "Tick Infestation",
+        "precision": 0.8,
+        "recall": 0.7272727272727273,
+        "f1": 0.761904761904762,
+        "support": 11.0
+      }
+    ],
+    "confusion_matrix": [
+      [
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        3.0,
+        0.0,
+        7.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        10.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        4.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        8.0
+      ]
+    ],
+    "matrix_order": [
+      "Dental Disease",
+      "Eye Infection",
+      "Fungal skin condition",
+      "Hot Spots",
+      "Mange",
+      "Normal-looking skin",
+      "Tick Infestation"
+    ],
+    "count": 78
+  },
+  "unique_files": {
+    "accuracy": 0.7051282051282052,
+    "macro_f1": 0.6935364174995512,
+    "per_class": [
+      {
+        "label": "Dental Disease",
+        "precision": 0.9375,
+        "recall": 1.0,
+        "f1": 0.967741935483871,
+        "support": 15.0
+      },
+      {
+        "label": "Eye Infection",
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "support": 10.0
+      },
+      {
+        "label": "Fungal skin condition",
+        "precision": 0.3333333333333333,
+        "recall": 0.25,
+        "f1": 0.28571428571428575,
+        "support": 12.0
+      },
+      {
+        "label": "Hot Spots",
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.6666666666666665,
+        "support": 10.0
+      },
+      {
+        "label": "Mange",
+        "precision": 0.47619047619047616,
+        "recall": 0.8333333333333334,
+        "f1": 0.6060606060606061,
+        "support": 12.0
+      },
+      {
+        "label": "Normal-looking skin",
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 8.0
+      },
+      {
+        "label": "Tick Infestation",
+        "precision": 0.8,
+        "recall": 0.7272727272727273,
+        "f1": 0.761904761904762,
+        "support": 11.0
+      }
+    ],
+    "confusion_matrix": [
+      [
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        3.0,
+        0.0,
+        7.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        10.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        4.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        8.0
+      ]
+    ],
+    "matrix_order": [
+      "Dental Disease",
+      "Eye Infection",
+      "Fungal skin condition",
+      "Hot Spots",
+      "Mange",
+      "Normal-looking skin",
+      "Tick Infestation"
+    ],
+    "count": 78
+  },
+  "group_balanced": {
+    "accuracy": 0.7051282051282052,
+    "macro_f1": 0.6935364174995512,
+    "per_class": [
+      {
+        "label": "Dental Disease",
+        "precision": 0.9375,
+        "recall": 1.0,
+        "f1": 0.967741935483871,
+        "support": 15.0
+      },
+      {
+        "label": "Eye Infection",
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "support": 10.0
+      },
+      {
+        "label": "Fungal skin condition",
+        "precision": 0.3333333333333333,
+        "recall": 0.25,
+        "f1": 0.28571428571428575,
+        "support": 12.0
+      },
+      {
+        "label": "Hot Spots",
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.6666666666666665,
+        "support": 10.0
+      },
+      {
+        "label": "Mange",
+        "precision": 0.47619047619047616,
+        "recall": 0.8333333333333334,
+        "f1": 0.6060606060606061,
+        "support": 12.0
+      },
+      {
+        "label": "Normal-looking skin",
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 8.0
+      },
+      {
+        "label": "Tick Infestation",
+        "precision": 0.8,
+        "recall": 0.7272727272727273,
+        "f1": 0.761904761904762,
+        "support": 11.0
+      }
+    ],
+    "confusion_matrix": [
+      [
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        3.0,
+        0.0,
+        7.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        10.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        4.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        8.0
+      ]
+    ],
+    "matrix_order": [
+      "Dental Disease",
+      "Eye Infection",
+      "Fungal skin condition",
+      "Hot Spots",
+      "Mange",
+      "Normal-looking skin",
+      "Tick Infestation"
+    ],
+    "count": 78
+  },
+  "independent_groups": 78,
+  "loss": 0.9886914094289144,
+  "cohorts": {
+    "new_source_holdout_unverified_case_independence": {
+      "all_files": {
+        "accuracy": 0.5,
+        "macro_f1": 0.09523809523809523,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Hot Spots",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Mange",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "support": 8.0
+          },
+          {
+            "label": "Tick Infestation",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Hot Spots",
+          "Mange",
+          "Normal-looking skin",
+          "Tick Infestation"
+        ],
+        "count": 8
+      },
+      "unique_files": {
+        "accuracy": 0.5,
+        "macro_f1": 0.09523809523809523,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Hot Spots",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Mange",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "support": 8.0
+          },
+          {
+            "label": "Tick Infestation",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Hot Spots",
+          "Mange",
+          "Normal-looking skin",
+          "Tick Infestation"
+        ],
+        "count": 8
+      },
+      "group_balanced": {
+        "accuracy": 0.5,
+        "macro_f1": 0.09523809523809523,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Hot Spots",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Mange",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "support": 8.0
+          },
+          {
+            "label": "Tick Infestation",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Hot Spots",
+          "Mange",
+          "Normal-looking skin",
+          "Tick Infestation"
+        ],
+        "count": 8
+      },
+      "independent_groups": 8,
+      "loss": 1.966926097869873
+    },
+    "previously_exposed_test": {
+      "all_files": {
+        "accuracy": 0.7285714285714285,
+        "macro_f1": 0.6149285520659876,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.9375,
+            "recall": 1.0,
+            "f1": 0.967741935483871,
+            "support": 15.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.9,
+            "recall": 0.9,
+            "f1": 0.9,
+            "support": 10.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.3333333333333333,
+            "recall": 0.25,
+            "f1": 0.28571428571428575,
+            "support": 12.0
+          },
+          {
+            "label": "Hot Spots",
+            "precision": 0.8571428571428571,
+            "recall": 0.6,
+            "f1": 0.7058823529411764,
+            "support": 10.0
+          },
+          {
+            "label": "Mange",
+            "precision": 0.5263157894736842,
+            "recall": 0.8333333333333334,
+            "f1": 0.6451612903225806,
+            "support": 12.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Tick Infestation",
+            "precision": 0.8888888888888888,
+            "recall": 0.7272727272727273,
+            "f1": 0.7999999999999999,
+            "support": 11.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            15.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            9.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            3.0,
+            0.0,
+            7.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            4.0,
+            6.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            10.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            8.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Hot Spots",
+          "Mange",
+          "Normal-looking skin",
+          "Tick Infestation"
+        ],
+        "count": 70
+      },
+      "unique_files": {
+        "accuracy": 0.7285714285714285,
+        "macro_f1": 0.6149285520659876,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.9375,
+            "recall": 1.0,
+            "f1": 0.967741935483871,
+            "support": 15.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.9,
+            "recall": 0.9,
+            "f1": 0.9,
+            "support": 10.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.3333333333333333,
+            "recall": 0.25,
+            "f1": 0.28571428571428575,
+            "support": 12.0
+          },
+          {
+            "label": "Hot Spots",
+            "precision": 0.8571428571428571,
+            "recall": 0.6,
+            "f1": 0.7058823529411764,
+            "support": 10.0
+          },
+          {
+            "label": "Mange",
+            "precision": 0.5263157894736842,
+            "recall": 0.8333333333333334,
+            "f1": 0.6451612903225806,
+            "support": 12.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Tick Infestation",
+            "precision": 0.8888888888888888,
+            "recall": 0.7272727272727273,
+            "f1": 0.7999999999999999,
+            "support": 11.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            15.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            9.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            3.0,
+            0.0,
+            7.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            4.0,
+            6.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            10.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            8.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Hot Spots",
+          "Mange",
+          "Normal-looking skin",
+          "Tick Infestation"
+        ],
+        "count": 70
+      },
+      "group_balanced": {
+        "accuracy": 0.7285714285714285,
+        "macro_f1": 0.6149285520659876,
+        "per_class": [
+          {
+            "label": "Dental Disease",
+            "precision": 0.9375,
+            "recall": 1.0,
+            "f1": 0.967741935483871,
+            "support": 15.0
+          },
+          {
+            "label": "Eye Infection",
+            "precision": 0.9,
+            "recall": 0.9,
+            "f1": 0.9,
+            "support": 10.0
+          },
+          {
+            "label": "Fungal skin condition",
+            "precision": 0.3333333333333333,
+            "recall": 0.25,
+            "f1": 0.28571428571428575,
+            "support": 12.0
+          },
+          {
+            "label": "Hot Spots",
+            "precision": 0.8571428571428571,
+            "recall": 0.6,
+            "f1": 0.7058823529411764,
+            "support": 10.0
+          },
+          {
+            "label": "Mange",
+            "precision": 0.5263157894736842,
+            "recall": 0.8333333333333334,
+            "f1": 0.6451612903225806,
+            "support": 12.0
+          },
+          {
+            "label": "Normal-looking skin",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0.0
+          },
+          {
+            "label": "Tick Infestation",
+            "precision": 0.8888888888888888,
+            "recall": 0.7272727272727273,
+            "f1": 0.7999999999999999,
+            "support": 11.0
+          }
+        ],
+        "confusion_matrix": [
+          [
+            15.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            9.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            3.0,
+            0.0,
+            7.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            4.0,
+            6.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            10.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            8.0
+          ]
+        ],
+        "matrix_order": [
+          "Dental Disease",
+          "Eye Infection",
+          "Fungal skin condition",
+          "Hot Spots",
+          "Mange",
+          "Normal-looking skin",
+          "Tick Infestation"
+        ],
+        "count": 70
+      },
+      "independent_groups": 70,
+      "loss": 0.8768932138170514
+    }
+  },
+  "model_sha256": "21e1c83163f949d001f0aca6d8e07af40565e5ed19265b80d03b05c1792749b3",
+  "note": "Contains previously exposed v1 test images. New-source patient independence is not verified. Changed taxonomy prevents direct headline comparison to v1."
+}

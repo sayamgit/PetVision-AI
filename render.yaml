@@ -1,0 +1,48 @@
+# No paid disk or Render database is provisioned. Supabase is configured separately.
+services:
+  - type: web
+    name: petvision-ai
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /healthz/
+    autoDeployTrigger: "off"
+    envVars:
+      - key: PETVISION_STORAGE_MODE
+        value: supabase
+      - key: PETVISION_DEBUG
+        value: "0"
+      - key: PETVISION_SECRET_KEY
+        sync: false
+      - key: PETVISION_ALLOWED_HOSTS
+        sync: false
+      - key: PETVISION_PUBLIC_BASE_URL
+        sync: false
+      - key: PETVISION_TRUSTED_PROXY
+        value: "*"
+      - key: PETVISION_PROXY_ONLY_NETWORK
+        value: "1"
+      - key: PETVISION_DB_HOST
+        sync: false
+      - key: PETVISION_DB_PORT
+        value: "5432"
+      - key: PETVISION_DB_NAME
+        value: postgres
+      - key: PETVISION_DB_USER
+        sync: false
+      - key: PETVISION_DB_PASSWORD
+        sync: false
+      - key: PETVISION_S3_ENDPOINT
+        sync: false
+      - key: PETVISION_S3_REGION
+        sync: false
+      - key: PETVISION_S3_BUCKET
+        value: petvision-photos
+      - key: PETVISION_S3_ACCESS_KEY_ID
+        sync: false
+      - key: PETVISION_S3_SECRET_ACCESS_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PETVISION_FREE_TIER_CONFIRMED
+        value: "1"

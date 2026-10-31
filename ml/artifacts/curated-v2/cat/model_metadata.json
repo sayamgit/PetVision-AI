@@ -1,0 +1,45 @@
+{
+  "species": "cat",
+  "classes": [
+    "Dental Disease",
+    "Ear Mites",
+    "Eye Infection",
+    "Fungal skin condition",
+    "Normal-looking skin",
+    "Scabies"
+  ],
+  "manifest_hash": "b1bac2c9bf58742879cce38ddb3fa1dd8d5522ae6f49206389ef84f82dfa3788",
+  "config": {
+    "architecture": "mobilenet_v3_small",
+    "weights": "IMAGENET1K_V1",
+    "seed": 42,
+    "epochs": 20,
+    "patience": 5,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "frozen_features": true,
+    "selection": "validation_group_balanced_macro_f1",
+    "preprocess": {
+      "size": 224,
+      "mode": "fit_inside_square_then_pad",
+      "padding_rgb": [
+        128,
+        128,
+        128
+      ],
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    }
+  },
+  "code_hash": "6c6fcad23ee6ae6a9cfa7d2c2ae5b0db355f8e7fce252c9d4d22ec7d9a7a8ab6",
+  "torch": "2.11.0+cu130",
+  "torchvision": "0.26.0+cu130"
+}

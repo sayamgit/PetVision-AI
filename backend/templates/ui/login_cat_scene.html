@@ -1,0 +1,45 @@
+{% load static %}<div class="login-companion" data-cat-scene data-cat-walk-atlas="{% static 'pets/brand/login-cat-walk.png' %}" data-cat-atlas="{% static 'pets/brand/login-cat-atlas.png' %}">
+<div class="cat-scene-heading"><span class="cat-intro">A little company while you sign in</span><button type="button" class="cat-pause" data-cat-pause aria-pressed="false" hidden>Pause animation</button></div>
+<div class="cat-stage-wrap"><svg class="cat-stage" viewBox="0 0 520 300" aria-hidden="true" focusable="false">
+<defs>
+<clipPath id="cat-portrait-head"><path d="M-120-225H120V-103Q60-94 0-99Q-60-94-120-103Z"/></clipPath>
+<clipPath id="cat-portrait-body"><path d="M-120-106Q-60-97 0-102Q60-97 120-106V12H-120Z"/></clipPath>
+<radialGradient id="cat-halo"><stop stop-color="#fff" stop-opacity=".65"/><stop offset="1" stop-color="#72dadd" stop-opacity="0"/></radialGradient>
+<linearGradient id="cat-fur" x1="0" y1="0" x2=".75" y2="1"><stop class="fur-light"/><stop offset="1" class="fur-dark"/></linearGradient>
+<linearGradient id="cat-wall"><stop stop-color="#4192b5" stop-opacity=".12"/><stop offset="1" stop-color="#296b99" stop-opacity=".28"/></linearGradient>
+</defs>
+<ellipse cx="250" cy="172" rx="225" ry="134" fill="url(#cat-halo)"/>
+<path d="M48 263H474" stroke="currentColor" stroke-opacity=".15" stroke-linecap="round"/>
+<g class="cat-sparkles" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".3"><path d="M378 61v12m-6-6h12M436 146v8m-4-4h8"/><circle cx="156" cy="54" r="3"/><circle cx="469" cy="212" r="2"/></g>
+<ellipse data-cat-shadow cx="245" cy="264" rx="57" ry="8" fill="#1b4760" opacity=".12"/>
+<g data-cat-position transform="translate(245 260)"><g data-cat-rig><g data-cat-vector>
+<path data-cat-tail d="M30-28C90-22 97-79 71-81C53-83 58-59 70-61" fill="none" stroke="var(--cat-dark)" stroke-width="19" stroke-linecap="round"/>
+<g data-cat-body><ellipse cx="0" cy="-48" rx="40" ry="45" fill="url(#cat-fur)"/>
+<ellipse cx="-1" cy="-41" rx="25" ry="32" fill="var(--cat-cream)"/>
+<g class="cat-stripes" fill="none" stroke="var(--cat-stripe)" stroke-width="6" stroke-linecap="round"><path d="M-33-58l9 4m-12 12l10 4m57-20l-9 5m13 11l-11 4"/></g></g>
+<g data-cat-leg="left"><ellipse cx="-25" cy="-20" rx="14" ry="25" fill="url(#cat-fur)"/><ellipse cx="-26" cy="-6" rx="19" ry="10" fill="var(--cat-cream)"/><path d="M-34-10v5m8-5v5" stroke="var(--cat-dark)" stroke-width="1.5" opacity=".5"/></g>
+<g data-cat-leg="right"><ellipse cx="24" cy="-20" rx="14" ry="25" fill="url(#cat-fur)"/><ellipse cx="25" cy="-6" rx="19" ry="10" fill="var(--cat-cream)"/><path d="M24-10v5m8-5v5" stroke="var(--cat-dark)" stroke-width="1.5" opacity=".5"/></g>
+<g data-cat-head>
+<g data-cat-ear="left"><path d="M-48-106Q-65-139-51-161Q-27-153-17-131Z" fill="url(#cat-fur)"/><path d="M-46-126l-6-26 23 19Z" fill="#edb0ac"/></g>
+<g data-cat-ear="right"><path d="M20-131Q31-153 52-161Q65-139 48-106Z" fill="url(#cat-fur)"/><path d="M31-133l20-19-5 26Z" fill="#edb0ac"/></g>
+<path d="M-52-122Q-45-143-15-145l-8-9 22 8 9-8 6 9Q46-142 54-117l8 14-10-2 7 14-12-3Q42-67 1-64Q-40-64-50-92l-12 3 8-13-10 1Z" fill="url(#cat-fur)"/>
+<g class="cat-stripes" fill="none" stroke="var(--cat-stripe)" stroke-width="5" stroke-linecap="round"><path d="M-16-141l5 15m12-19v16m15-13-5 15M-49-115l11 4m-12 8l10 2m90-14-11 4m12 8-11 2"/></g>
+<g data-cat-eyes>
+<ellipse cx="-24" cy="-110" rx="20" ry="24" fill="#fffdf8"/><ellipse cx="24" cy="-110" rx="20" ry="24" fill="#fffdf8"/>
+<g data-cat-pupils><ellipse cx="-22" cy="-108" rx="10" ry="14" fill="var(--cat-iris)"/><ellipse cx="26" cy="-108" rx="10" ry="14" fill="var(--cat-iris)"/><ellipse cx="-21" cy="-108" rx="6" ry="11" fill="#152637"/><ellipse cx="27" cy="-108" rx="6" ry="11" fill="#152637"/><circle cx="-25" cy="-114" r="3.5" fill="white"/><circle cx="23" cy="-114" r="3.5" fill="white"/></g></g>
+<ellipse cx="-11" cy="-82" rx="17" ry="12" fill="var(--cat-cream)"/><ellipse cx="12" cy="-82" rx="17" ry="12" fill="var(--cat-cream)"/>
+<path d="M-7-90Q0-94 7-90Q6-84 0-83Q-6-84-7-90" fill="#c78087"/>
+<path d="M0-83v6m0-1q-6 5-10 0m10 0q6 5 10 0" fill="none" stroke="#614b51" stroke-width="1.7" stroke-linecap="round"/>
+<g stroke="var(--cat-whisker)" stroke-width="1.2" opacity=".65" stroke-linecap="round"><path d="M-20-84l-34-4m35 9-35 3m74-8 34-4m-35 9 35 3"/></g>
+</g></g>
+<g data-cat-walk-rig><svg data-cat-walk-frame x="-110" y="-192" width="220" height="193" viewBox="0 0 226.57 198.4" preserveAspectRatio="none"><image href="{% static 'pets/brand/login-cat-walk.png' %}" width="1586" height="992"/></svg></g>
+<g data-cat-art>
+<g class="cat-art-open">
+<g clip-path="url(#cat-portrait-body)"><svg class="cat-art-frame" data-cat-frame="open" x="-110" y="-215" width="220" height="220" viewBox="0 0 396.6 396.5" preserveAspectRatio="xMidYMid meet"><image href="{% static 'pets/brand/login-cat-atlas.png' %}" width="1983" height="793"/></svg></g>
+<g data-cat-portrait-head><g clip-path="url(#cat-portrait-head)"><svg class="cat-art-frame" data-cat-frame="open" x="-110" y="-215" width="220" height="220" viewBox="0 0 396.6 396.5" preserveAspectRatio="xMidYMid meet"><image href="{% static 'pets/brand/login-cat-atlas.png' %}" width="1983" height="793"/></svg></g></g>
+</g>
+<g class="cat-art-covered"><svg class="cat-art-frame" data-cat-frame="covered" x="-110" y="-215" width="220" height="220" viewBox="0 396.5 396.6 396.5" preserveAspectRatio="xMidYMid meet"><image href="{% static 'pets/brand/login-cat-cover.png' %}" width="1983" height="793"/></svg></g>
+</g></g></g>
+<path class="cat-peek-wall" d="M0 27Q0 17 11 17H40V264H0Z" fill="url(#cat-wall)"/><path d="M40 18V263" stroke="currentColor" stroke-opacity=".17"/>
+</svg><button class="cat-jump" data-cat-jump type="button" aria-label="Make the cat jump"></button></div><div class="cat-scene-footer"><span data-cat-name>A curious companion</span><span data-cat-hint>Click the cat for a jump.</span></div>
+</div>

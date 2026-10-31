@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block content %}
+<a class="back" href="{% if pet %}{% url 'pet_care_hub' pet.pk %}{% else %}{% url 'care_home' %}{% endif %}">← Care centre</a>
+<section class="heading"><div><p class="eyebrow">PETVISION / GENERAL PET CHECK</p><h1>A moment to check in.</h1><p class="lead">{% if pet %}{{ pet.name }} · {% endif %}{{ check.get_species_display }} · {{ check.created_at|date:'j M Y, H:i' }}</p></div></section>
+<div class="care-layout"><section class="panel"><span class="record-label">No disease prediction performed</span><h2>A photo alone cannot confirm health.</h2>
+<p>Your photo has been saved privately. We have not classified it as healthy or assigned a disease. This model is not reliable enough to decide whether an ordinary pet photo shows a healthy animal.</p>
+<h3>What have you noticed?</h3><p>Tell the care assistant about changes in eating, energy, behaviour, or appearance—or ask an everyday care question. Your observations give the conversation useful context.</p>
+{% if check.observations %}<blockquote>{{ check.observations|linebreaksbr }}</blockquote>{% endif %}
+<a class="button" href="{% if pet %}{% url 'new_pet_chat' pet.pk %}{% else %}{% url 'new_general_chat' %}{% endif %}?photo={{ check.pk }}">Discuss observations ↗</a>
+<p class="muted">The assistant receives your written observations after you start the conversation. It does not examine this photo.</p>
+<details><summary>Have you noticed a visible change?</summary><p>Use a clear close-up for a separate visible-concern check. Image matches are suggestions, not a diagnosis or a test of whether your pet is healthy.</p><a href="{% if pet %}{% url 'photo_start' pet.pk %}{% else %}{% url 'photo_general' %}{% endif %}">Start a visible-concern check</a></details></section>
+<aside class="panel"><img class="profile-photo" src="{% url 'photo_image' check.pk %}" alt="Your privately saved pet photo"><p class="muted">Private photo · never published on a QR card</p><details><summary>Delete this photo check</summary><form method="post" action="{% url 'photo_delete' check.pk %}">{% csrf_token %}<input type="hidden" name="confirm" value="yes"><p>This removes the saved photo and check.</p><button class="button secondary" type="submit">Delete photo check</button></form></details></aside></div>{% endblock %}

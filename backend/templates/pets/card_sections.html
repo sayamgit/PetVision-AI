@@ -1,0 +1,19 @@
+{% if card.details %}
+<section class="panel card-section"><p class="eyebrow">01 / IDENTITY</p><h2>A little about {{ card.name }}</h2><dl class="facts">
+<div><dt>Breed</dt><dd>{{ card.details.breed|default:'Not provided' }}</dd></div>
+<div><dt>Age</dt><dd>{% if card.details.age_years != None %}{{ card.details.age_years }} years{% else %}Not provided{% endif %}</dd></div>
+<div><dt>Sex</dt><dd>{{ card.details.sex|default:'Not provided' }}</dd></div>
+<div><dt>Weight</dt><dd>{% if card.details.weight_kg != None %}{{ card.details.weight_kg }} kg{% else %}Not provided{% endif %}</dd></div>
+<div class="wide"><dt>Identifying markings</dt><dd>{{ card.details.color_markings|default:'Not provided' }}</dd></div>
+</dl></section>{% endif %}
+{% if card.medical %}
+<section class="panel card-section medical-card" id="emergency-record"><div class="section-heading"><div><p class="eyebrow">02 / EMERGENCY INFORMATION</p><h2>Know before you help.</h2></div><span class="record-label">Owner reported</span></div>
+<p class="muted">Shared by the owner; not independently verified. Blank information does not mean there is no medical risk. These notes are not treatment instructions.</p>
+<dl class="medical-facts"><div class="allergy"><dt>Allergies / adverse reactions</dt><dd>{{ card.medical.allergies|default:'Not provided — unknown'|linebreaksbr }}</dd></div>
+<div><dt>Medical conditions</dt><dd>{{ card.medical.medical_conditions|default:'Not provided — unknown'|linebreaksbr }}</dd></div>
+<div><dt>Current medications</dt><dd>{{ card.medical.medications|default:'Not provided — unknown'|linebreaksbr }}</dd></div>
+<div><dt>Vaccination summary</dt><dd>{{ card.medical.vaccination_notes|default:'No record provided'|linebreaksbr }}</dd></div>
+<div><dt>Handling / behavior notes</dt><dd>{{ card.medical.handling_notes|default:'Not provided'|linebreaksbr }}</dd></div></dl>
+<div class="vet-contact"><div><span class="eyebrow">VETERINARIAN / CLINIC</span><h3>{{ card.medical.vet_name|default:'Not provided' }}</h3>{% if card.medical.vet_phone %}<a class="button secondary" href="tel:{{ card.medical.vet_dial }}">Call {{ card.medical.vet_phone }}</a>{% else %}<p class="muted">No veterinarian phone provided.</p>{% endif %}</div></div>
+<p class="record-date">{% if card.medical.medical_updated_at %}Medical details last updated or reviewed by owner: {{ card.medical.medical_updated_at|date:'j M Y, H:i' }}{% else %}Medical details have not been reviewed yet.{% endif %}</p></section>{% endif %}
+{% if card.contact %}<section class="panel card-section contact-card"><p class="eyebrow">03 / REACH THEIR PERSON</p><h2>Emergency contact</h2><p>{{ card.contact.name|default:'Contact name not provided' }}</p>{% if card.contact.phone %}<a class="button" href="tel:{{ card.contact.dial }}">Call {{ card.contact.phone }}</a>{% else %}<p class="muted">No emergency phone shared. You can leave a finder report below.</p>{% endif %}</section>{% endif %}

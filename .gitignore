@@ -1,45 +1,71 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
+# Keep the published repository focused. Local research/data stay on this computer.
+/*
+!/.gitignore
+!/.dockerignore
+!/.github/
+!/README.md
+!/Dockerfile
+!/render.yaml
+!/deploy.env.example
+!/requirements-app.txt
+!/requirements-deploy.txt
+!/requirements-inference.txt
+!/start-petvision.ps1
+!/configure-gemini.ps1
+!/backend/
+!/docs/
+!/ml/
+!/tools/
 
-# Virtual environments
-venv/
-.venv/
-env/
+/docs/*
+!/docs/app-setup.md
+!/docs/deployment.md
+!/docs/architecture.md
+!/docs/repository.md
+!/docs/model-card.md
+!/docs/care-planner.md
+!/docs/pet-chat.md
+!/docs/verification-20261021.md
+!/docs/supabase-setup.sql
 
-# Environment variables / secrets
+/ml/*
+!/ml/artifacts/
+/ml/artifacts/*
+!/ml/artifacts/curated-v2/
+/ml/artifacts/curated-v2/*
+!/ml/artifacts/curated-v2/cat/
+!/ml/artifacts/curated-v2/dog/
+/ml/artifacts/curated-v2/*/*
+!/ml/artifacts/curated-v2/*/best_model.pt
+!/ml/artifacts/curated-v2/*/model_metadata.json
+!/ml/artifacts/curated-v2/*/test_metrics.json
+
+/tools/*
+!/tools/package_release.py
+!/tools/repository_files.py
+!/tools/check_repository.py
+!/tools/qa/
+
+# Private state and generated output are never published.
 .env
 .env.*
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Machine Learning model files
-*.h5
-*.hdf5
-*.pt
-*.pth
-*.onnx
-
-# Logs
+*.env
+*.sqlite3*
+*.db
+.local-secret
+__pycache__/
+*.py[cod]
 *.log
-
-# Node
+*.pem
+*.key
+*.pfx
+venv/
+.venv/
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
-
-# Build output
+private-media/
+backups/
+staticfiles/
 dist/
 build/
-.next/
-
-# IDE
-.vscode/
-.idea/
-
-# OS
 .DS_Store
 Thumbs.db

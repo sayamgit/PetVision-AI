@@ -1,0 +1,40 @@
+/* Original SVG character rig: five palettes, one consistent illustration language. */
+.login-companion{--cat-light:#f3b869;--cat-dark:#bd7638;--cat-cream:#ffe8c8;--cat-stripe:#b96c33;--cat-iris:#a4aa6b;--cat-whisker:#71543e;position:relative;max-width:470px;margin-top:22px;color:var(--muted);contain:layout style;isolation:isolate}
+.cat-stage{display:block;width:100%;height:auto;overflow:hidden;touch-action:pan-y;user-select:none}
+.fur-light{stop-color:var(--cat-light)}.fur-dark{stop-color:var(--cat-dark)}
+.cat-scene-heading,.cat-scene-footer{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:11px;letter-spacing:.2px}.cat-scene-heading{min-height:30px}.cat-scene-footer{padding:0 12px 0 38px;margin-top:-8px}.cat-scene-footer>span:first-child{font-weight:700;color:var(--pv-link)}
+.cat-pause{font:inherit;color:var(--muted);border:0;background:transparent;padding:6px 0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:30px}.cat-pause:hover{color:var(--pv-link)}
+.login-companion[data-cat=black]{--cat-light:#53616d;--cat-dark:#243440;--cat-cream:#60707b;--cat-stripe:#253743;--cat-iris:#a6c2b7;--cat-whisker:#c7d9e1}
+.login-companion[data-cat=white]{--cat-light:#fffdfa;--cat-dark:#c4d4df;--cat-cream:#fffefa;--cat-stripe:#cbd7df;--cat-iris:#7ea6b7;--cat-whisker:#6a8291}
+.login-companion[data-cat=tabby]{--cat-light:#c9a47b;--cat-dark:#896348;--cat-cream:#ecdbc0;--cat-stripe:#775039;--cat-iris:#b7b27b;--cat-whisker:#624b3a}
+.login-companion[data-cat=gray]{--cat-light:#c0d1df;--cat-dark:#73899e;--cat-cream:#e1eaf1;--cat-stripe:#6b8298;--cat-iris:#95b4be;--cat-whisker:#425c70}
+.login-companion:is([data-cat=black],[data-cat=white]) .cat-stripes{opacity:0}
+[data-cat-head],[data-cat-tail],[data-cat-leg],[data-cat-ear],[data-cat-eyes]{transform-box:view-box}
+html[data-theme=dark] .cat-stage{color:#b6d6ee}html[data-theme=dark] .cat-sparkles{opacity:.45}
+@media(max-width:760px){.login-companion{max-width:360px;margin:12px auto 0}.cat-intro{font-size:10px}.cat-scene-footer{font-size:10px}.auth-grid{gap:22px}}
+
+
+/* Locally served, textured character artwork; SVG rig remains the load-error fallback. */
+[data-cat-art]{display:none;transform-origin:0 0}.cat-art-ready [data-cat-art]{display:block}.cat-art-ready [data-cat-vector]{display:none}
+.cat-art-frame{overflow:hidden;pointer-events:none}.cat-art-open,.cat-art-covered{transition:opacity .4s ease-in-out;transform-origin:0 -110px}.cat-art-covered{opacity:0;transform:none}
+.login-companion[data-interaction=password] .cat-art-covered,.login-companion[data-interaction=submitting] .cat-art-covered{opacity:1;transform:translateY(0)}
+.login-companion[data-interaction=password] .cat-art-open,.login-companion[data-interaction=submitting] .cat-art-open{opacity:0;transform:none}
+.login-companion[data-interaction=password] [data-cat-eyes]{opacity:0}
+.login-companion[data-paused=true] .cat-art-open,.login-companion[data-paused=true] .cat-art-covered{transition:none}
+@media(prefers-reduced-motion:reduce){.cat-art-open,.cat-art-covered{transition:none;transform:none!important}}
+
+/* Walking and click target are confined to the login companion. */
+.cat-stage-wrap{position:relative}
+.login-companion .cat-jump{position:absolute;left:47.1%;top:90.6%;width:42.3%;height:73.3%;transform:translate(-50%,-100%);background:transparent;border:0;border-radius:35%;padding:0;box-shadow:none;cursor:pointer;transition:none;-webkit-tap-highlight-color:transparent}
+.login-companion .cat-jump:hover,.login-companion .cat-jump:active{background:transparent;transform:translate(-50%,-100%);box-shadow:none}
+.login-companion .cat-jump:focus-visible{outline:2px dashed var(--pv-link);outline-offset:-8px}
+[data-cat-walk-rig]{display:none;opacity:0;transition:opacity .36s ease-in-out}.cat-walk-ready [data-cat-walk-rig]{display:block}[data-cat-walk-frame]{overflow:hidden;pointer-events:none}
+.login-companion[data-walking=true] [data-cat-walk-rig]{opacity:1}
+.cat-art-ready [data-cat-art]{opacity:1;transition:opacity .36s ease-in-out}.login-companion[data-walking=true] [data-cat-art]{opacity:0}.login-companion[data-walking=true] [data-cat-vector]{display:none}
+/* Only this sign-in panel receives the requested clear glass treatment. */
+.auth-grid .panel.auth.login-glass,html[data-theme=dark] .auth-grid .panel.auth.login-glass{background:transparent;backdrop-filter:blur(18px) saturate(115%);-webkit-backdrop-filter:blur(18px) saturate(115%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 14px 38px rgba(35,49,85,.09)}
+html[data-theme=dark] .auth-grid .panel.auth.login-glass{border-color:rgba(214,231,255,.24);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 14px 38px rgba(0,0,0,.15)}
+
+
+@media(prefers-reduced-motion:reduce){[data-cat-walk-rig],.cat-art-ready [data-cat-art]{transition:none}}
+.login-companion[data-paused=true] [data-cat-walk-rig],.login-companion[data-paused=true] [data-cat-art]{transition:none}

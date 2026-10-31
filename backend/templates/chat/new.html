@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<a class="back" href="{% if pet.pk %}{% url 'pet_care_hub' pet.pk %}{% else %}{% url 'care_home' %}{% endif %}">← {% if pet.pk %}{{ pet.name }}'s care{% else %}Care centre{% endif %}</a>
+<section class="heading"><div><p class="eyebrow">YOUR PET / YOUR CONVERSATION</p><h1>Let's talk about {{ pet.name }}.</h1><p class="lead">Ask what's on your mind.</p></div></section>
+<section class="panel">
+  <p class="record-label">Pet care assistant</p>
+  <h2>Everyday questions deserve a conversation.</h2>
+  <p>Try “My pet isn't eating” or “How should I brush their coat?” You can reply to the answer and keep talking.</p>
+  {% if photo_check %}<p class="record-label">Photo result ready to discuss</p><p>{% if photo_check.is_general_check %}Your written observations provide background for this conversation. No disease prediction was made, and the assistant does not examine your photo.{% else %}The selected image category and your observations provide background for this conversation. Your photo and model percentages stay on the app server.{% endif %}</p>{% endif %}
+  <form method="post">
+    {% csrf_token %}<input type="hidden" name="start_ack" value="yes">
+    {% if choose_species %}<label for="chat-species">Animal type</label><select id="chat-species" name="species" required><option value="">Choose cat or dog</option><option value="cat">Cat</option><option value="dog">Dog</option></select>{% endif %}
+    <details class="chat-explainer">
+      <summary><span aria-hidden="true">ⓘ</span> How answers work</summary>
+      <div class="chat-explainer-content">
+        <p>Gemini interprets your wording and recent conversation using our checked veterinary reference notes. It does not browse live websites. Answers can be mistaken and cannot diagnose or replace veterinary care.</p>
+        <p>With automatic replies, Google Gemini receives your question, up to six recent exchanges, your pet’s species and age, and the selected category and observations when discussing a photo. Free-tier content may be used to improve Google’s products. Avoid personal or confidential details.</p>
+        <p>Messages are stored privately in your app account and never published on the QR card. Profile contact details, photos, QR details, and medical fields are not automatically sent. We try to remove emails and phone-like numbers from messages, but other personal details may remain. Older conversation details may need repeating.</p>
+        <p>If Gemini reaches a quota or rate limit, or is unavailable, a limited reference guide takes over. The reply will explain the switch. Each new automatic-mode message tries Gemini again; we cannot predict a quota reset time. No paid service is enabled by this app.</p>
+        <p>The local guide keeps requests on the app server and has limited phrase matching. Both modes have limited reference coverage and are not clinically validated.</p>
+        <label for="chat-backend">Reply preference for this conversation</label>
+        <select id="chat-backend" name="backend"><option value="gemini">Automatic — Gemini with reference backup</option><option value="reference" {% if resuming.answer_mode == 'reference' %}selected{% endif %}>Local reference guide only</option></select>
+        <p>To change the preference later, return to this page from All conversations and choose Conversation options. You can also delete a conversation below. Deleting it here does not delete data already processed by Google.</p>
+      </div>
+    </details>
+    <p class="muted">By {% if resuming %}continuing{% else %}starting{% endif %} with automatic replies, you agree to Google Gemini processing your messages and pet’s species/age. Choose local-only in the details above if you prefer.</p>
+    {% if resuming %}<p>Your existing messages will be kept.</p>{% endif %}
+    <button class="button">{% if resuming %}Continue conversation{% else %}Start a conversation{% endif %}</button>
+  </form>
+  {% if pet.pk %}<p><a href="{% url 'care_start' pet.pk %}">Use the structured questionnaire instead</a></p>{% endif %}
+</section>
+<h2 class="chat-section-title">Recent conversations</h2>
+{% for item in recent %}
+<section class="panel">
+  <a class="history-row" href="{% url 'pet_chat' item.pk %}"><div><h3>{{ item.title }}</h3><small>{{ item.updated_at|date:'j M Y, H:i' }}</small></div><span>↗</span></a>
+  <a href="{{ intro_url }}?resume={{ item.pk }}">Conversation options</a>
+  <details class="chat-sources"><summary>Delete conversation</summary><form method="post" action="{% url 'chat_delete' item.pk %}">{% csrf_token %}<label class="check"><input type="checkbox" name="confirm" value="yes" required> Delete this conversation and its messages.</label><button class="button secondary small">Delete conversation</button></form></details>
+</section>
+{% empty %}<p class="muted">Your conversations will appear here.</p>{% endfor %}
+{% endblock %}
