@@ -14,7 +14,7 @@ EXACT = (
     'docs/repository.md', 'docs/model-card.md', 'docs/care-planner.md',
     'docs/pet-chat.md', 'docs/verification-20261021.md', 'docs/supabase-setup.sql',
     'tools/repository_files.py', 'tools/check_repository.py', 'tools/package_release.py',
-    'tools/qa/README.md', 'tools/qa/verify_qr_flow.py', 'tools/qa/check_qr.cjs',
+    'tools/qa/verify_container.py', 'tools/qa/check_container.py', 'tools/qa/README.md', 'tools/qa/verify_qr_flow.py', 'tools/qa/check_qr.cjs',
 )
 SOURCE = {'backend/config': {'.py'}, 'backend/pets': {'.py'},
           'backend/templates': {'.html'}, 'backend/static': {'.css', '.js', '.png', '.svg', '.webp', '.ico'}}

@@ -64,7 +64,7 @@ Application tests use synthetic data and mocked external responses. They do not 
 
 The deployment target is **Render Free + Supabase Free**: PostgreSQL stores records, a private bucket stores photos, and Render serves the app and models. No paid resource is declared. Deployment still requires private configuration and live verification; a free plan is not an uptime or unlimited-storage guarantee.
 
-Follow the [deployment guide](docs/deployment.md). The free service's memory limit must be checked with both models and large uploads before declaring deployment ready. The local showcase database and its passwords are not shipped.
+Follow the [deployment guide](docs/deployment.md). A local Linux stress test passes under 512 MiB with both models, repeated large uploads and upload admission control. Live hosting and Supabase persistence still need verification. The local showcase database and its passwords are not shipped.
 
 ## Further reading
 

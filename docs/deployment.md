@@ -48,3 +48,24 @@ Official setup references:
 - [Django storage configuration](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html)
 
 Photo uploads are admitted one at a time per process to keep large image decoding within the free instance memory budget. A simultaneous upload receives HTTP 503 with a retry message and Retry-After; other page requests remain available.
+
+
+## Local verification — 1 November 2026
+
+- Final Linux Docker build completed from `deploy/Dockerfile`.
+- All 140 Django tests passed in Linux; the QR browser suite passed all 12 checks.
+- Original cat/dog artifact hashes are unchanged. A regression test verifies identical
+  preprocessing pixels across RGB/RGBA/grayscale and all eight EXIF orientations.
+- The reproducible 512 MiB/no-swap container check passed small and 12 MP uploads for
+  both species, six further large uploads and four simultaneous submissions. Exactly
+  one simultaneous upload completed and three received the retry response. No OOM.
+- The final run including PostgreSQL/S3 client library initialization peaked at
+  438.3 MiB. Cold-cache runs can reach the cgroup limit while Linux reclaims file-cache
+  pages; this is not a fixed memory guarantee for every environment or workload.
+- The first stress test exposed concurrent-upload and retained-image-buffer crashes.
+  Upload admission and explicit buffer cleanup fixed these without replacing weights.
+- GitHub Actions passed the reorganized application checks.
+
+These checks used synthetic data and offline local storage. Actual Supabase credentials,
+private-bucket read/write, production persistence across restart, the Render CPU quota,
+and a separate phone's final HTTPS QR/location flow still need live verification.
