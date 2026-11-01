@@ -53,3 +53,16 @@ def remote_persistence(env):
             request_checksum_calculation='when_required', response_checksum_validation='when_required'),
     }}
     return database, storage
+
+
+
+def apply_render_origin_defaults(env):
+    """Use Render's assigned HTTPS hostname; explicit custom-domain values win."""
+    if env.get('RENDER') != 'true' or not env.get('RENDER_EXTERNAL_HOSTNAME'):
+        return
+    import re
+    hostname = env['RENDER_EXTERNAL_HOSTNAME']
+    if not re.fullmatch(r'[a-z0-9][a-z0-9.-]*\.onrender\.com', hostname):
+        raise ImproperlyConfigured('Invalid Render external hostname.')
+    env.setdefault('PETVISION_ALLOWED_HOSTS', hostname + ',localhost,127.0.0.1')
+    env.setdefault('PETVISION_PUBLIC_BASE_URL', 'https://' + hostname)

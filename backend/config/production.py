@@ -7,6 +7,8 @@ from django.core.exceptions import ImproperlyConfigured
 # Set before loading local settings: production must never create a local secret.
 if os.environ.get('PETVISION_DEBUG') != '0':
     raise ImproperlyConfigured('Production requires PETVISION_DEBUG=0.')
+from .cloud_storage import apply_render_origin_defaults
+apply_render_origin_defaults(os.environ)
 from .settings import *  # noqa: E402,F403
 
 if len(SECRET_KEY) < 50 or len(set(SECRET_KEY)) < 5:

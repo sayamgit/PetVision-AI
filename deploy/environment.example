@@ -2,8 +2,9 @@
 PETVISION_DEBUG=0
 DJANGO_SETTINGS_MODULE=config.production
 PETVISION_SECRET_KEY=
-PETVISION_ALLOWED_HOSTS=your-service.onrender.com,localhost,127.0.0.1
-PETVISION_PUBLIC_BASE_URL=https://your-service.onrender.com
+# Render assigns these automatically. Set explicitly only for a custom domain or another host.
+# PETVISION_ALLOWED_HOSTS=pets.example.com,localhost,127.0.0.1
+# PETVISION_PUBLIC_BASE_URL=https://pets.example.com
 PETVISION_STORAGE_MODE=supabase
 PETVISION_DB_HOST=
 PETVISION_DB_PORT=5432

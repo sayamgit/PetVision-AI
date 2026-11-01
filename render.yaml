@@ -16,10 +16,6 @@ services:
         value: "0"
       - key: PETVISION_SECRET_KEY
         sync: false
-      - key: PETVISION_ALLOWED_HOSTS
-        sync: false
-      - key: PETVISION_PUBLIC_BASE_URL
-        sync: false
       - key: PETVISION_TRUSTED_PROXY
         value: "*"
       - key: PETVISION_PROXY_ONLY_NETWORK

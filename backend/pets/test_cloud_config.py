@@ -1,6 +1,6 @@
 from django.core.exceptions import ImproperlyConfigured
 from django.test import SimpleTestCase
-from config.cloud_storage import remote_persistence
+from config.cloud_storage import remote_persistence, apply_render_origin_defaults
 from .storage import PrivatePhotoStorage
 
 
@@ -46,3 +46,25 @@ class CloudConfigTests(SimpleTestCase):
         storage = PrivatePhotoStorage(access_key='synthetic', secret_key='synthetic')
         with self.assertRaises(ValueError):
             storage.url('private-photo.jpg')
+
+
+class RenderOriginTests(SimpleTestCase):
+    def test_assigned_hostname_is_used_without_a_manual_url(self):
+        env = {'RENDER': 'true', 'RENDER_EXTERNAL_HOSTNAME': 'petvision-test.onrender.com'}
+        apply_render_origin_defaults(env)
+        self.assertEqual(env['PETVISION_PUBLIC_BASE_URL'], 'https://petvision-test.onrender.com')
+        self.assertEqual(env['PETVISION_ALLOWED_HOSTS'], 'petvision-test.onrender.com,localhost,127.0.0.1')
+
+    def test_explicit_custom_domain_is_preserved(self):
+        env = {'RENDER': 'true', 'RENDER_EXTERNAL_HOSTNAME': 'petvision-test.onrender.com',
+            'PETVISION_PUBLIC_BASE_URL': 'https://pets.example.com', 'PETVISION_ALLOWED_HOSTS': 'pets.example.com'}
+        apply_render_origin_defaults(env)
+        self.assertEqual(env['PETVISION_PUBLIC_BASE_URL'], 'https://pets.example.com')
+        self.assertEqual(env['PETVISION_ALLOWED_HOSTS'], 'pets.example.com')
+
+    def test_untrusted_host_and_non_render_environment(self):
+        with self.assertRaises(ImproperlyConfigured):
+            apply_render_origin_defaults({'RENDER': 'true', 'RENDER_EXTERNAL_HOSTNAME': 'evil.example.com'})
+        env = {'RENDER_EXTERNAL_HOSTNAME': 'petvision-test.onrender.com'}
+        apply_render_origin_defaults(env)
+        self.assertNotIn('PETVISION_PUBLIC_BASE_URL', env)
