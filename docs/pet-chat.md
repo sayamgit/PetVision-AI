@@ -4,7 +4,7 @@ Care centre offers conversations for an owned pet or another cat/dog. Gemini gen
 
 ## Configure Gemini
 
-For local use, run `configure-gemini.ps1` and enter the key in its hidden prompt. The ignored `.env.gemini` stays on this computer. For hosting, set `GEMINI_API_KEY` and `PETVISION_FREE_TIER_CONFIRMED=1` privately in the host's environment. Keep billing disabled if only free use is intended. The app cannot verify billing from a key and never enables a paid fallback.
+For local use, run `tools/windows/configure-gemini.ps1` and enter the key in its hidden prompt. The ignored `.env.gemini` stays on this computer. For hosting, set `GEMINI_API_KEY` and `PETVISION_FREE_TIER_CONFIRMED=1` privately in the host's environment. Keep billing disabled if only free use is intended. The app cannot verify billing from a key and never enables a paid fallback.
 
 API availability and usage limits depend on the provider project/model. The app distinguishes a quota/rate-limit response from connection, authentication or service errors. An unavailable response does not by itself establish that daily quota is exhausted. A configured key is not proof of a successful live connection.
 

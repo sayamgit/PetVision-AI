@@ -30,30 +30,36 @@ def start(request,pk=None):
                 return redirect('photo_result',key=old.pk)
             image = form.cleaned_data['image']
             try:
-                if form.cleaned_data['purpose'] == 'general':
-                    result = {'purpose':'general','version':'general-check-v1','status':'not_assessed','ranked':[]}
-                else:
-                    result = {**predict(image,species), 'purpose':'concern'}
-            except ModelUnavailable as error:
-                form.add_error(None,str(error))
-            else:
-                preview = image.copy()
-                preview.thumbnail((1200,1200))
-                output = BytesIO()
-                preview.save(output,'JPEG',quality=88)
-                record = PhotoCheck(id=key,owner=request.user,pet=selected_pet,species=species,result=result,observations=form.cleaned_data['observations'])
-                record.image.save('photo.jpg',ContentFile(output.getvalue()),save=False)
                 try:
-                    with transaction.atomic():
-                        record.save(force_insert=True)
-                except IntegrityError:
-                    record.image.delete(save=False)
-                    existing=get_object_or_404(PhotoCheck,pk=key,owner=request.user)
-                    return redirect('photo_result',key=existing.pk)
-                except Exception:
-                    record.image.delete(save=False)
-                    raise
-                return redirect('photo_result',key=record.pk)
+                    if form.cleaned_data['purpose'] == 'general':
+                        result = {'purpose':'general','version':'general-check-v1','status':'not_assessed','ranked':[]}
+                    else:
+                        result = {**predict(image,species), 'purpose':'concern'}
+                except ModelUnavailable as error:
+                    form.add_error(None,str(error))
+                else:
+                    preview = image.copy()
+                    try:
+                        preview.thumbnail((1200,1200))
+                        output = BytesIO()
+                        preview.save(output,'JPEG',quality=88)
+                    finally:
+                        preview.close()
+                    record = PhotoCheck(id=key,owner=request.user,pet=selected_pet,species=species,result=result,observations=form.cleaned_data['observations'])
+                    record.image.save('photo.jpg',ContentFile(output.getvalue()),save=False)
+                    try:
+                        with transaction.atomic():
+                            record.save(force_insert=True)
+                    except IntegrityError:
+                        record.image.delete(save=False)
+                        existing=get_object_or_404(PhotoCheck,pk=key,owner=request.user)
+                        return redirect('photo_result',key=existing.pk)
+                    except Exception:
+                        record.image.delete(save=False)
+                        raise
+                    return redirect('photo_result',key=record.pk)
+            finally:
+                image.close()
     return render(request,'images/start.html',{'pet':pet,'form':form,'checks':(pet.photo_checks.all() if pet else PhotoCheck.objects.filter(owner=request.user))[:20],'classes':CLASSES[pet.species] if pet else [],'general':pet is None})
 
 @login_required

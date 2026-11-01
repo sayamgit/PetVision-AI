@@ -2,8 +2,8 @@ FROM python:3.12-slim
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 \
     DJANGO_SETTINGS_MODULE=config.production PETVISION_DEBUG=0 PETVISION_DATA_DIR=/data PORT=8000
 WORKDIR /app
-COPY requirements-app.txt requirements-deploy.txt requirements-inference.txt ./
-RUN pip install -r requirements-deploy.txt && pip install -r requirements-inference.txt
+COPY requirements/ ./requirements/
+RUN pip install -r requirements/deploy.txt && pip install -r requirements/inference.txt
 RUN groupadd -g 10001 petvision && useradd -u 10001 -g petvision -m petvision \
     && mkdir /data && chown petvision:petvision /data
 COPY --chown=petvision:petvision backend ./backend

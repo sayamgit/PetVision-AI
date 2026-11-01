@@ -18,7 +18,7 @@ Database connections require TLS. Supplying the downloaded Supabase CA via `PETV
 
 Connect the confirmed GitHub repository using a Blueprint and its `render.yaml`, or create a Docker Web Service manually. Choose **Free** and Singapore. Do not enable a paid disk or Render database. The Blueprint explicitly selects Free and leaves automatic deployments off.
 
-Set the values in [deploy.env.example](../deploy.env.example) using Render's environment settings. Set `PETVISION_PUBLIC_BASE_URL` to the assigned HTTPS service origin and `PETVISION_ALLOWED_HOSTS` to that hostname plus `localhost,127.0.0.1`. Set `PETVISION_SECRET_KEY` to a random, stable value of at least 50 characters, generated locally with `secrets.token_urlsafe(64)`. The Blueprint prompts for it; Render's default generated value is shorter than this application's validation requires.
+Set the values in [deploy/environment.example](../deploy/environment.example) using Render's environment settings. Set `PETVISION_PUBLIC_BASE_URL` to the assigned HTTPS service origin and `PETVISION_ALLOWED_HOSTS` to that hostname plus `localhost,127.0.0.1`. Set `PETVISION_SECRET_KEY` to a random, stable value of at least 50 characters, generated locally with `secrets.token_urlsafe(64)`. The Blueprint prompts for it; Render's default generated value is shorter than this application's validation requires.
 
 `PETVISION_STORAGE_MODE=supabase` is mandatory on Render. Production refuses a disk configuration there. Startup checks models, runs migrations and collects static assets before Waitress starts. Render terminates HTTPS; wildcard proxy trust is appropriate only behind that managed proxy, never on a directly exposed listener.
 
@@ -26,7 +26,7 @@ Gemini is optional. Set its key privately and confirm the free-tier project. No 
 
 ## 3. Verify before sharing
 
-- Build the Linux container and measure peak memory with both models and maximum-size uploads. Windows measurements alone do not verify Render's 512 MB limit. Do not declare the free deployment ready if it restarts or runs out of memory.
+- Build with `docker build -f deploy/Dockerfile -t petvision:release .` and measure peak memory with both models and maximum-size uploads. Windows measurements alone do not verify Render's 512 MB limit. Do not declare the free deployment ready if it restarts or runs out of memory.
 - Test signup/login, ownership isolation, private photos, QR sharing/revocation, both species' predictions, general photo checks, Gemini/fallback, reports and calendar export over the final HTTPS URL.
 - Restart the service and verify the same test record and photo persist in Supabase.
 - Scan a newly generated public QR code from a phone. Verify permission denial, optional consented location and the owner's finder inbox. Old localhost QR codes cannot reach the hosted app.
@@ -34,7 +34,7 @@ Gemini is optional. Set its key privately and confirm the free-tier project. No 
 
 ## Local persistent-disk alternative
 
-For a host with an actual durable volume, use `PETVISION_STORAGE_MODE=disk`, mount `/data`, set `PETVISION_DATA_DIR=/data`, and grant UID 10001 access. This is not Render Free. The same Dockerfile supports both modes.
+For a host with an actual durable volume, use `PETVISION_STORAGE_MODE=disk`, mount `/data`, set `PETVISION_DATA_DIR=/data`, and grant UID 10001 access. This is not Render Free. The same deploy/Dockerfile supports both modes.
 
 ## Limits
 
@@ -46,3 +46,5 @@ Official setup references:
 - [Supabase database connections](https://supabase.com/docs/guides/database/connecting-to-postgres)
 - [Supabase S3 authentication](https://supabase.com/docs/guides/storage/s3/authentication)
 - [Django storage configuration](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html)
+
+Photo uploads are admitted one at a time per process to keep large image decoding within the free instance memory budget. A simultaneous upload receives HTTP 503 with a retry message and Retry-After; other page requests remain available.

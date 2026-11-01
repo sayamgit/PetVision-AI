@@ -12,3 +12,5 @@ Browser → HTTPS proxy → one Waitress process → Django.
 - Calendar exports transfer reminder responsibility to the user's calendar. There is no background push/email service.
 
 One process is required because throttling and model caches are process-local. Uploaded photos are limited to 2 MB / 12 million pixels, sanitized and served privately. Free-host memory and storage limits still apply.
+
+Photo uploads are admitted one at a time per process to keep large image decoding within the free instance memory budget. A simultaneous upload receives HTTP 503 with a retry message and Retry-After; other page requests remain available.

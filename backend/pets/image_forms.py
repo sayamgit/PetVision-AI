@@ -49,6 +49,7 @@ class PhotoCheckForm(forms.Form):
                         raise ValueError('Image too small')
                     clean = Image.new('RGB',converted.size)
                     clean.paste(converted)
+                    converted.close()
                     return clean
         except (OSError,ValueError,UnidentifiedImageError,Image.DecompressionBombError,Image.DecompressionBombWarning):
             raise forms.ValidationError('Choose a valid, still JPEG, PNG or WebP photo at least 64 pixels on each side and no more than 12 million pixels.')

@@ -1,8 +1,8 @@
 **
-!Dockerfile
-!requirements-app.txt
-!requirements-deploy.txt
-!requirements-inference.txt
+!deploy/
+!deploy/Dockerfile
+!requirements/
+!requirements/*.txt
 !backend/
 !backend/**
 !ml/

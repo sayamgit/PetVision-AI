@@ -18,10 +18,17 @@ class ModelUnavailable(Exception):
     pass
 
 def square_image(image):
-    image = ImageOps.exif_transpose(image).convert('RGB')
-    fitted = ImageOps.contain(image,(224,224),method=Image.Resampling.BILINEAR)
-    canvas = Image.new('RGB',(224,224),(128,128,128))
-    canvas.paste(fitted,((224-fitted.width)//2,(224-fitted.height)//2))
+    # Validated uploads are already oriented RGB. Avoid two full-size copies;
+    # retain the exact original resize, padding and orientation behavior.
+    if image.mode == 'RGB' and image.getexif().get(274, 1) == 1:
+        fitted = ImageOps.contain(image, (224, 224), method=Image.Resampling.BILINEAR)
+    else:
+        with ImageOps.exif_transpose(image) as oriented:
+            with oriented.convert('RGB') as rgb:
+                fitted = ImageOps.contain(rgb, (224, 224), method=Image.Resampling.BILINEAR)
+    with fitted:
+        canvas = Image.new('RGB', (224, 224), (128, 128, 128))
+        canvas.paste(fitted, ((224-fitted.width)//2, (224-fitted.height)//2))
     return canvas
 
 @lru_cache(maxsize=2)

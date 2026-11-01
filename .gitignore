@@ -4,14 +4,9 @@
 !/.dockerignore
 !/.github/
 !/README.md
-!/Dockerfile
 !/render.yaml
-!/deploy.env.example
-!/requirements-app.txt
-!/requirements-deploy.txt
-!/requirements-inference.txt
-!/start-petvision.ps1
-!/configure-gemini.ps1
+!/deploy/
+!/requirements/
 !/backend/
 !/docs/
 !/ml/
@@ -45,6 +40,7 @@
 !/tools/repository_files.py
 !/tools/check_repository.py
 !/tools/qa/
+!/tools/windows/
 
 # Private state and generated output are never published.
 .env

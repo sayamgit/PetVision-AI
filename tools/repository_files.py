@@ -6,9 +6,9 @@ import json
 ROOT = Path(__file__).resolve().parents[1]
 EXACT = (
     '.gitignore', '.dockerignore', '.github/workflows/checks.yml',
-    'README.md', 'Dockerfile', 'render.yaml', 'deploy.env.example',
-    'requirements-app.txt', 'requirements-deploy.txt', 'requirements-inference.txt',
-    'start-petvision.ps1', 'configure-gemini.ps1',
+    'README.md', 'deploy/Dockerfile', 'render.yaml', 'deploy/environment.example',
+    'requirements/app.txt', 'requirements/deploy.txt', 'requirements/inference.txt',
+    'tools/windows/start-petvision.ps1', 'tools/windows/configure-gemini.ps1',
     'backend/manage.py', 'backend/serve.py', 'backend/check_gemini.py',
     'docs/app-setup.md', 'docs/deployment.md', 'docs/architecture.md',
     'docs/repository.md', 'docs/model-card.md', 'docs/care-planner.md',

@@ -6,13 +6,13 @@ Use Python 3.12 and a virtual environment. From the repository root:
 python -m venv .venv
 # Windows: .venv\Scripts\activate
 # macOS/Linux: source .venv/bin/activate
-python -m pip install -r requirements-deploy.txt
-python -m pip install -r requirements-inference.txt
+python -m pip install -r requirements/deploy.txt
+python -m pip install -r requirements/inference.txt
 python backend/manage.py migrate
 python backend/manage.py runserver
 ```
 
-Open http://127.0.0.1:8000/ and create an account. Windows users may alternatively run `start-petvision.ps1` after installing the dependencies. The included CPU models work offline; optional Gemini replies require a private key. `configure-gemini.ps1` prompts locally and writes an ignored secret file. Never paste a key into source code.
+Open http://127.0.0.1:8000/ and create an account. Windows users may alternatively run `tools/windows/start-petvision.ps1` after installing the dependencies. The included CPU models work offline; optional Gemini replies require a private key. `tools/windows/configure-gemini.ps1` prompts locally and writes an ignored secret file. Never paste a key into source code.
 
 Local SQLite, the generated local Django secret and private photos live under `backend/` and are excluded from Git. Static images are product assets, not private user uploads. Use [production deployment](deployment.md) for hosting; Django's development server is not the production entry point.
 

@@ -1,5 +1,6 @@
 param([switch]$FromClipboard)
 $ErrorActionPreference = 'Stop'
+$projectRoot = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 Write-Host 'Use a project marked Free Tier in https://aistudio.google.com/api-keys'
 Write-Host 'Keep billing disabled. PetVision cannot verify billing from an API key.'
 $confirmation = Read-Host 'Does the key belong to a Free Tier project with billing disabled? Type FREE to continue'
@@ -28,7 +29,7 @@ try {
     if ($value.StartsWith('http') -or $value.Contains('...') -or $value.Contains([char]34) -or $value.Contains([char]39)) {
         throw 'Received a link, shortened key, or quoted text. Copy only the full key from AI Studio. No file was written.'
     }
-    $path = Join-Path $PSScriptRoot '.env.gemini'
+    $path = Join-Path $projectRoot '.env.gemini'
     if (Test-Path -LiteralPath $path) {
         $replace = Read-Host 'A saved key exists. Type REPLACE to overwrite it'
         if ($replace -cne 'REPLACE') { Write-Host 'No changes made.'; exit 1 }

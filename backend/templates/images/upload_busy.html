@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel">
+  <p class="eyebrow">PETVISION / PHOTO UPLOAD</p>
+  <h1>A photo is being processed</h1>
+  <p>Please try again in a moment. Your photo has not been saved or analysed yet.</p>
+  <a class="button" href="{{ request.path }}">Return to upload</a>
+</section>
+{% endblock %}

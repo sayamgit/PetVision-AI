@@ -25,7 +25,8 @@ ml/artifacts/         The two verified curated-v2 models and their evaluation me
 docs/                 Setup, architecture, model limitations and deployment guides
 tools/                Repository checks, release packaging and browser QA
 .github/workflows/    Automated application and packaging checks
-Dockerfile            CPU inference container
+deploy/               Docker container and environment example
+requirements/         Application, deployment and CPU inference dependencies
 render.yaml           Free Render service configuration
 ```
 
@@ -39,13 +40,13 @@ Use Python 3.12 and a virtual environment:
 python -m venv .venv
 # Windows: .venv\Scripts\activate
 # macOS/Linux: source .venv/bin/activate
-python -m pip install -r requirements-deploy.txt
-python -m pip install -r requirements-inference.txt
+python -m pip install -r requirements/deploy.txt
+python -m pip install -r requirements/inference.txt
 python backend/manage.py migrate
 python backend/manage.py runserver
 ```
 
-Open http://127.0.0.1:8000/ and create an account. On Windows, `start-petvision.ps1` is also available. Gemini is optional: use `configure-gemini.ps1` or private environment variables `GEMINI_API_KEY` and `PETVISION_FREE_TIER_CONFIRMED=1`. Never commit the key.
+Open http://127.0.0.1:8000/ and create an account. On Windows, `tools/windows/start-petvision.ps1` is also available. Gemini is optional: use `tools/windows/configure-gemini.ps1` or private environment variables `GEMINI_API_KEY` and `PETVISION_FREE_TIER_CONFIRMED=1`. Never commit the key.
 
 ## Verify
 

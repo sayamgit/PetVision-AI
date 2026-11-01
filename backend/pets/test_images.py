@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import uuid
 from unittest.mock import patch
-from PIL import Image
+from PIL import Image, ImageOps
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
 from django.core.files.uploadedfile import SimpleUploadedFile
@@ -34,6 +34,19 @@ class ImageInputTests(SimpleTestCase):
         rotated=square_image(image)
         self.assertEqual(rotated.getpixel((112,0)),(255,0,0))
         self.assertEqual(rotated.getpixel((0,112)),(128,128,128))
+
+    def test_memory_optimization_preserves_preprocessing_pixels(self):
+        for mode in ('RGB', 'RGBA', 'L'):
+            for orientation in range(1, 9):
+                source = Image.linear_gradient('L').resize((317, 123)).convert(mode)
+                source.getexif()[274] = orientation
+                oriented = ImageOps.exif_transpose(source).convert('RGB')
+                fitted = ImageOps.contain(oriented, (224, 224), method=Image.Resampling.BILINEAR)
+                expected = Image.new('RGB', (224, 224), (128, 128, 128))
+                expected.paste(fitted, ((224-fitted.width)//2, (224-fitted.height)//2))
+                with square_image(source) as actual:
+                    self.assertEqual(actual.tobytes(), expected.tobytes(), (mode, orientation))
+                source.close(); oriented.close(); fitted.close(); expected.close()
 
     def test_bad_large_small_and_animated_inputs(self):
         inputs=[SimpleUploadedFile('fake.jpg',b'not an image'),upload((32,32)),SimpleUploadedFile('huge.jpg',b'x'*(2*1024*1024+1))]
