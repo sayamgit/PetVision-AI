@@ -1,4 +1,4 @@
-"""Build a release with the same explicit allowlist used for GitHub review."""
+"""Build an application release without the separately published datasets."""
 import hashlib
 import json
 import zipfile

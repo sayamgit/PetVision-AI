@@ -1,11 +1,11 @@
 """Audit tracked/staged paths and common secret patterns; never print secret values."""
 import re
 import subprocess
-from repository_files import ROOT, release_files
+from repository_files import ROOT, repository_files
 
 
 def main():
-    files = release_files()
+    files = repository_files()
     allowed = {path.relative_to(ROOT).as_posix() for path in files}
     tracked = set(subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode().strip('\0').split('\0')) - {''}
     unexpected = sorted(tracked - allowed)
@@ -19,9 +19,10 @@ def main():
         data = path.read_bytes()
         total += len(data)
         relative = path.relative_to(ROOT).as_posix()
-        if len(data) > 25 * 1024 * 1024:
+        limit = 100 * 1024 * 1024 if relative in {'dataset/Pet_vision_DS.zip', 'dataset/PetVision_dataset_v2.zip'} else 25 * 1024 * 1024
+        if len(data) > limit:
             issues.append(relative + ': exceeds repository size limit')
-        if path.suffix not in {'.pt', '.png', '.webp', '.ico'} and any(re.search(p, data) for p in patterns):
+        if path.suffix not in {'.pt', '.png', '.webp', '.ico', '.zip'} and any(re.search(p, data) for p in patterns):
             issues.append(relative + ': potential credential pattern (value withheld)')
     if unexpected:
         issues += ['Not allowlisted: ' + name for name in unexpected]

@@ -30,7 +30,7 @@ requirements/         Application, deployment and CPU inference dependencies
 render.yaml           Free Render service configuration
 ```
 
-Templates and frontend assets live inside `backend/`; this application does not require a separate frontend build. Datasets, experiments, credentials, accounts and uploaded photos are excluded. See [what belongs in Git](docs/repository.md).
+Templates and frontend assets live inside `backend/`; this application does not require a separate frontend build. The [dataset folder](dataset/README.md) contains the original and curated image archives, source information and a verification script. Experiments, credentials, accounts and user-uploaded photos are excluded. See [what belongs in Git](docs/repository.md).
 
 ## Run locally
 

@@ -1,0 +1,10 @@
+{
+  "Pet_vision_DS.zip": {
+    "sha256": "9cac98dcff9c86c025c0afd6a466cb6b6a08eb6bfa7cdcf28afe98b6f36b18ad",
+    "bytes": 93163780
+  },
+  "PetVision_dataset_v2.zip": {
+    "sha256": "c5613a01a5fb7b0c66b3c458c99da78b16eee150e9fc2853f37a934a48eaa269",
+    "bytes": 78740955
+  }
+}

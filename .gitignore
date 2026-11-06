@@ -1,4 +1,4 @@
-# Keep the published repository focused. Local research/data stay on this computer.
+# Track application files and the two documented review datasets.
 /*
 !/.gitignore
 !/.dockerignore
@@ -11,6 +11,15 @@
 !/docs/
 !/ml/
 !/tools/
+!/dataset/
+/dataset/*
+!/dataset/Pet_vision_DS.zip
+!/dataset/PetVision_dataset_v2.zip
+!/dataset/README.md
+!/dataset/CURATION_POLICY.md
+!/dataset/checksums.json
+!/dataset/training_manifest.json
+!/dataset/verify_dataset.py
 
 /docs/*
 !/docs/app-setup.md

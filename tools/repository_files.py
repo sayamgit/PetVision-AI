@@ -1,4 +1,4 @@
-"""One explicit allowlist shared by repository audit and release packaging."""
+"""Application release files and separately published review datasets."""
 from pathlib import Path
 import hashlib
 import json
@@ -36,4 +36,22 @@ def release_files():
     for path in paths:
         if not path.is_file() or path.is_symlink() or not path.resolve().is_relative_to(ROOT.resolve()):
             raise RuntimeError(f'Missing or unsafe release file: {path.relative_to(ROOT)}')
+    return sorted(paths)
+
+
+DATASET_FILES = (
+    'Pet_vision_DS.zip', 'PetVision_dataset_v2.zip', 'README.md',
+    'CURATION_POLICY.md', 'checksums.json', 'training_manifest.json',
+    'verify_dataset.py',
+)
+
+
+def repository_files():
+    """Include review datasets in Git, but keep them out of deployment packages."""
+    paths = release_files()
+    for name in DATASET_FILES:
+        path = ROOT/'dataset'/name
+        if not path.is_file() or path.is_symlink() or not path.resolve().is_relative_to(ROOT.resolve()):
+            raise RuntimeError(f'Missing or unsafe dataset file: {name}')
+        paths.append(path)
     return sorted(paths)
