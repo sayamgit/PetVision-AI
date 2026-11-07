@@ -1,0 +1,203 @@
+PetVision-AI automated test report
+Run date: 7 November 2026 (Asia/Calcutta)
+Source commit: 69ec0537b0db35de92be3742bb9423b3345452cf
+Python: 3.12.14
+Django: 5.2.18
+Working directory: repository backend/
+Command: python manage.py test pets --noinput --verbosity 2
+Exit code: 0
+Configuration: debug test mode, temporary test secret, cloud credentials disabled.
+Database: Django in-memory SQLite test database, destroyed after the run.
+This test did not access or change the deployed Supabase database.
+Scope: application behaviour; external Gemini responses are mocked in provider tests.
+Not a clinical validation, live-service availability test or re-evaluation of model predictions.
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+Found 143 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: messages, staticfiles
+  Apply all migrations: auth, contenttypes, pets, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying pets.0001_initial... OK
+  Applying pets.0002_pet_allergies_pet_breed_pet_color_markings_and_more... OK
+  Applying pets.0003_assessment... OK
+  Applying pets.0004_conversation_chatturn... OK
+  Applying pets.0005_chatturn_state_chatturn_suggestions... OK
+  Applying pets.0006_conversation_gemini_consent_at... OK
+  Applying pets.0007_conversation_answer_mode... OK
+  Applying pets.0008_photo_checks... OK
+  Applying pets.0009_general_photo_checks... OK
+  Applying pets.0010_inline_photo_followup... OK
+  Applying pets.0011_reminder... OK
+  Applying pets.0012_pet_is_demo... OK
+test_cannot_skip_questions_and_save (pets.test_care.CareFlowTests.test_cannot_skip_questions_and_save) ... ok
+test_drafts_and_records_are_owner_scoped (pets.test_care.CareFlowTests.test_drafts_and_records_are_owner_scoped) ... ok
+test_emergency_skips_followups (pets.test_care.CareFlowTests.test_emergency_skips_followups) ... ok
+test_expired_draft_and_download_provenance (pets.test_care.CareFlowTests.test_expired_draft_and_download_provenance) ... ok
+test_preview_then_explicit_save_is_idempotent (pets.test_care.CareFlowTests.test_preview_then_explicit_save_is_idempotent) ... ok
+test_public_qr_never_contains_assessments (pets.test_care.CareFlowTests.test_public_qr_never_contains_assessments) ... ok
+test_unknown_topic_and_empty_form (pets.test_care.CareFlowTests.test_unknown_topic_and_empty_form) ... ok
+test_centre_and_pet_hub_owner_scoping_and_actions (pets.test_care_ui.CareNavigationTests.test_centre_and_pet_hub_owner_scoping_and_actions) ... ok
+test_inline_photo_uses_only_its_linked_vet_and_public_qr_unchanged (pets.test_care_ui.CareNavigationTests.test_inline_photo_uses_only_its_linked_vet_and_public_qr_unchanged) ... ok
+test_urgency_contacts_and_general_animal_do_not_borrow_vet (pets.test_care_ui.CareNavigationTests.test_urgency_contacts_and_general_animal_do_not_borrow_vet) ... ok
+test_delete_requires_post_confirmation (pets.test_chat.ChatFlowTests.test_delete_requires_post_confirmation) ... ok
+test_duplicate_and_busy_submission (pets.test_chat.ChatFlowTests.test_duplicate_and_busy_submission) ... ok
+test_html_is_escaped (pets.test_chat.ChatFlowTests.test_html_is_escaped) ... ok
+test_offline_is_visible_not_fake_answer (pets.test_chat.ChatFlowTests.test_offline_is_visible_not_fake_answer) ... ok
+test_owner_isolation_and_public_exclusion (pets.test_chat.ChatFlowTests.test_owner_isolation_and_public_exclusion) ... ok
+test_two_turn_conversation_and_no_category (pets.test_chat.ChatFlowTests.test_two_turn_conversation_and_no_category) ... ok
+test_real_engine_persisted_followup_and_library (pets.test_chat.RealChatFlowTests.test_real_engine_persisted_followup_and_library) ... ok
+test_consent_and_real_provider_path_save_answer (pets.test_gemini.GeminiViewTests.test_consent_and_real_provider_path_save_answer) ... ok
+test_consent_required_before_any_cloud_call (pets.test_gemini.GeminiViewTests.test_consent_required_before_any_cloud_call) ... ok
+test_explanation_only_on_start_page_and_preference_persists (pets.test_gemini.GeminiViewTests.test_explanation_only_on_start_page_and_preference_persists) ... ok
+test_explicit_local_mode_never_calls_gemini (pets.test_gemini.GeminiViewTests.test_explicit_local_mode_never_calls_gemini) ... ok
+test_fallback_keeps_urgent_context_and_does_not_label_outage_as_quota (pets.test_gemini.GeminiViewTests.test_fallback_keeps_urgent_context_and_does_not_label_outage_as_quota) ... ok
+test_intro_requires_ack_and_cannot_update_another_owners_chat (pets.test_gemini.GeminiViewTests.test_intro_requires_ack_and_cannot_update_another_owners_chat) ... ok
+test_legacy_chat_returns_to_intro_without_losing_history (pets.test_gemini.GeminiViewTests.test_legacy_chat_returns_to_intro_without_losing_history) ... ok
+test_missing_configuration_and_invalid_mode (pets.test_gemini.GeminiViewTests.test_missing_configuration_and_invalid_mode) ... ok
+test_quota_failure_has_labeled_reference_fallback (pets.test_gemini.GeminiViewTests.test_quota_failure_has_labeled_reference_fallback) ... ok
+test_start_records_ack_without_api_call_and_local_switch_sticks (pets.test_gemini.GeminiViewTests.test_start_records_ack_without_api_call_and_local_switch_sticks) ... ok
+test_chat_handoff_is_editable_and_does_not_call_google (pets.test_general_check.GeneralCheckTests.test_chat_handoff_is_editable_and_does_not_call_google) ... ok
+test_delete_confirmation_and_file_removal (pets.test_general_check.GeneralCheckTests.test_delete_confirmation_and_file_removal) ... ok
+test_double_submit_is_idempotent (pets.test_general_check.GeneralCheckTests.test_double_submit_is_idempotent) ... ok
+test_general_chat_preserves_observations_without_invented_category (pets.test_general_check.GeneralCheckTests.test_general_chat_preserves_observations_without_invented_category) ... ok
+test_general_never_predicts_and_private_result_has_no_scores (pets.test_general_check.GeneralCheckTests.test_general_never_predicts_and_private_result_has_no_scores) ... ok
+test_invalid_photo_and_model_failure_create_no_record (pets.test_general_check.GeneralCheckTests.test_invalid_photo_and_model_failure_create_no_record) ... ok
+test_missing_or_invalid_purpose_does_not_run_model (pets.test_general_check.GeneralCheckTests.test_missing_or_invalid_purpose_does_not_run_model) ... ok
+test_owner_isolation_and_no_public_qr_leak (pets.test_general_check.GeneralCheckTests.test_owner_isolation_and_no_public_qr_leak) ... ok
+test_species_selection_and_saved_private_result (pets.test_general_check.GeneralCheckTests.test_species_selection_and_saved_private_result) ... ok
+test_split_scores_are_inconclusive_without_rewriting_model_results (pets.test_general_check.GeneralCheckTests.test_split_scores_are_inconclusive_without_rewriting_model_results) ... ok
+test_chat_handoff_is_editable_and_does_not_call_google (pets.test_images.PhotoFlowTests.test_chat_handoff_is_editable_and_does_not_call_google) ... ok
+test_delete_confirmation_and_file_removal (pets.test_images.PhotoFlowTests.test_delete_confirmation_and_file_removal) ... ok
+test_double_submit_is_idempotent (pets.test_images.PhotoFlowTests.test_double_submit_is_idempotent) ... ok
+test_invalid_photo_and_model_failure_create_no_record (pets.test_images.PhotoFlowTests.test_invalid_photo_and_model_failure_create_no_record) ... ok
+test_owner_isolation_and_no_public_qr_leak (pets.test_images.PhotoFlowTests.test_owner_isolation_and_no_public_qr_leak) ... ok
+test_species_selection_and_saved_private_result (pets.test_images.PhotoFlowTests.test_species_selection_and_saved_private_result) ... ok
+test_split_scores_are_inconclusive_without_rewriting_model_results (pets.test_images.PhotoFlowTests.test_split_scores_are_inconclusive_without_rewriting_model_results) ... ok
+test_chat_handoff_is_editable_and_does_not_call_google (pets.test_general_photos.GeneralPhotoTests.test_chat_handoff_is_editable_and_does_not_call_google) ... ok
+test_delete_confirmation_and_file_removal (pets.test_general_photos.GeneralPhotoTests.test_delete_confirmation_and_file_removal) ... ok
+test_double_submit_is_idempotent (pets.test_general_photos.GeneralPhotoTests.test_double_submit_is_idempotent) ... ok
+test_general_photo_and_chat_are_owner_private (pets.test_general_photos.GeneralPhotoTests.test_general_photo_and_chat_are_owner_private) ... ok
+test_invalid_focus_and_species_kept_after_photo_deleted (pets.test_general_photos.GeneralPhotoTests.test_invalid_focus_and_species_kept_after_photo_deleted) ... ok
+test_invalid_photo_and_model_failure_create_no_record (pets.test_general_photos.GeneralPhotoTests.test_invalid_photo_and_model_failure_create_no_record) ... ok
+test_no_profile_required_and_all_scores_displayed (pets.test_general_photos.GeneralPhotoTests.test_no_profile_required_and_all_scores_displayed) ... ok
+test_owner_isolation_and_no_public_qr_leak (pets.test_general_photos.GeneralPhotoTests.test_owner_isolation_and_no_public_qr_leak) ... ok
+test_saved_scores_are_unchanged_by_collapsed_alternatives (pets.test_general_photos.GeneralPhotoTests.test_saved_scores_are_unchanged_by_collapsed_alternatives) ... ok
+test_species_required_and_profile_scope (pets.test_general_photos.GeneralPhotoTests.test_species_required_and_profile_scope) ... ok
+test_species_selection_and_saved_private_result (pets.test_general_photos.GeneralPhotoTests.test_species_selection_and_saved_private_result) ... ok
+test_split_scores_are_inconclusive_without_rewriting_model_results (pets.test_general_photos.GeneralPhotoTests.test_split_scores_are_inconclusive_without_rewriting_model_results) ... ok
+test_inline_context_and_history_without_synthetic_owner_prompt (pets.test_photo_followup.InlinePhotoTests.test_inline_context_and_history_without_synthetic_owner_prompt) ... ok
+test_invalid_focus_consent_and_cross_owner_blocked (pets.test_photo_followup.InlinePhotoTests.test_invalid_focus_consent_and_cross_owner_blocked) ... ok
+test_non_javascript_send_stays_on_photo_and_emergency_not_delayed (pets.test_photo_followup.InlinePhotoTests.test_non_javascript_send_stays_on_photo_and_emergency_not_delayed) ... ok
+test_quota_notice_local_mode_and_focus_isolation (pets.test_photo_followup.InlinePhotoTests.test_quota_notice_local_mode_and_focus_isolation) ... ok
+test_outage_then_choice_uses_no_cloud_call_and_new_question_retries (pets.test_photo_reference.PhotoGuideIntegrationTests.test_outage_then_choice_uses_no_cloud_call_and_new_question_retries) ... ok
+test_all_routes_are_owner_only_and_actions_require_post (pets.test_planner.PlannerTests.test_all_routes_are_owner_only_and_actions_require_post) ... ok
+test_calendar_rejects_past_due_and_wrong_pet (pets.test_planner.PlannerTests.test_calendar_rejects_past_due_and_wrong_pet) ... ok
+test_calendar_utc_time_private_fields_escaping_and_stable_uid (pets.test_planner.PlannerTests.test_calendar_utc_time_private_fields_escaping_and_stable_uid) ... ok
+test_completion_idempotent_and_delete_requires_confirmation (pets.test_planner.PlannerTests.test_completion_idempotent_and_delete_requires_confirmation) ... ok
+test_create_validates_future_time_and_owner_from_url (pets.test_planner.PlannerTests.test_create_validates_future_time_and_owner_from_url) ... ok
+test_hub_reminders_and_escaping_empty_reports (pets.test_planner.PlannerTests.test_hub_reminders_and_escaping_empty_reports) ... ok
+test_report_boundaries_include_followups_not_just_new_chats (pets.test_planner.PlannerTests.test_report_boundaries_include_followups_not_just_new_chats) ... ok
+test_report_completion_window_distinct_from_due_window (pets.test_planner.PlannerTests.test_report_completion_window_distinct_from_due_window) ... ok
+test_animation_is_scoped_to_login_and_preserves_form (pets.test_release.ReleaseTests.test_animation_is_scoped_to_login_and_preserves_form) ... ok
+test_health_reports_database_failure_without_detail (pets.test_release.ReleaseTests.test_health_reports_database_failure_without_detail) ... ok
+test_contacts_use_normal_links_and_still_require_public_sharing (pets.test_showcase.ShowcaseTests.test_contacts_use_normal_links_and_still_require_public_sharing) ... ok
+test_existing_real_account_is_never_changed (pets.test_showcase.ShowcaseTests.test_existing_real_account_is_never_changed) ... ok
+test_invalid_photo_does_not_leave_partial_account (pets.test_showcase.ShowcaseTests.test_invalid_photo_does_not_leave_partial_account) ... ok
+test_local_only_creation_and_real_profiles_unaffected (pets.test_showcase.ShowcaseTests.test_local_only_creation_and_real_profiles_unaffected) ... ok
+test_showcase_private_images_credentials_and_idempotence (pets.test_showcase.ShowcaseTests.test_showcase_private_images_credentials_and_idempotence) ... Not Found: /p/22d4c466-b88f-4198-9024-d284e8fa78b7/photo/
+ok
+test_anonymous_cannot_read_owner_pages (pets.tests.RecoveryTests.test_anonymous_cannot_read_owner_pages) ... ok
+test_complete_recovery_flow (pets.tests.RecoveryTests.test_complete_recovery_flow) ... ok
+test_coordinates_need_consent_pair_and_valid_range (pets.tests.RecoveryTests.test_coordinates_need_consent_pair_and_valid_range) ... ok
+test_create_cannot_choose_another_owner (pets.tests.RecoveryTests.test_create_cannot_choose_another_owner) ... ok
+test_html_in_report_is_escaped (pets.tests.RecoveryTests.test_html_in_report_is_escaped) ... ok
+test_invalid_contact_and_weight_are_rejected (pets.tests.RecoveryTests.test_invalid_contact_and_weight_are_rejected) ... ok
+test_invalid_photo_and_age_rejected (pets.tests.RecoveryTests.test_invalid_photo_and_age_rejected) ... ok
+test_medical_review_date_and_unknown_values (pets.tests.RecoveryTests.test_medical_review_date_and_unknown_values) ... ok
+test_mutations_require_post_and_rotation_confirmation (pets.tests.RecoveryTests.test_mutations_require_post_and_rotation_confirmation) ... ok
+test_photo_upload_strips_metadata_and_requires_public_opt_in (pets.tests.RecoveryTests.test_photo_upload_strips_metadata_and_requires_public_opt_in) ... ok
+test_private_endpoints_reject_other_owner (pets.tests.RecoveryTests.test_private_endpoints_reject_other_owner) ... ok
+test_public_form_requires_csrf (pets.tests.RecoveryTests.test_public_form_requires_csrf) ... ok
+test_public_page_has_no_private_fields_or_reports (pets.tests.RecoveryTests.test_public_page_has_no_private_fields_or_reports) ... ok
+test_qr_png_and_configured_origin (pets.tests.RecoveryTests.test_qr_png_and_configured_origin) ... ok
+test_qr_rotation_revokes_old_page_and_photo (pets.tests.RecoveryTests.test_qr_rotation_revokes_old_page_and_photo) ... ok
+test_rate_limit_public_submissions (pets.tests.RecoveryTests.test_rate_limit_public_submissions) ... ok
+test_report_card_sharing_is_explicit_and_independent (pets.tests.RecoveryTests.test_report_card_sharing_is_explicit_and_independent) ... ok
+test_signup_login_logout (pets.tests.RecoveryTests.test_signup_login_logout) ... ok
+test_emergency_overrides_every_topic (pets.test_care.ContentTests.test_emergency_overrides_every_topic) ... ok
+test_keywords_are_cautious_not_a_negation_parser (pets.test_care.ContentTests.test_keywords_are_cautious_not_a_negation_parser) ... ok
+test_severe_followups_override_other_answers (pets.test_care.ContentTests.test_severe_followups_override_other_answers) ... ok
+test_skin_guidance_has_primary_references (pets.test_care.ContentTests.test_skin_guidance_has_primary_references) ... ok
+test_sleep_duration_does_not_become_healthy_diagnosis (pets.test_care.ContentTests.test_sleep_duration_does_not_become_healthy_diagnosis) ... ok
+test_unknown_and_unsupported_never_get_clearance (pets.test_care.ContentTests.test_unknown_and_unsupported_never_get_clearance) ... ok
+test_reference_backup_has_conditional_skin_help_without_stale_steps (pets.test_care_ui.PracticalGuidanceTests.test_reference_backup_has_conditional_skin_help_without_stale_steps) ... ok
+test_structured_steps_require_valid_citation_and_reject_unsafe_output (pets.test_care_ui.PracticalGuidanceTests.test_structured_steps_require_valid_citation_and_reject_unsafe_output) ... ok
+test_ambiguous_topics_request_choice (pets.test_chat.ReferenceTests.test_ambiguous_topics_request_choice) ... ok
+test_appetite_wording_and_spelling (pets.test_chat.ReferenceTests.test_appetite_wording_and_spelling) ... ok
+test_duration_urgent_and_does_not_leak_into_new_topic (pets.test_chat.ReferenceTests.test_duration_urgent_and_does_not_leak_into_new_topic) ... ok
+test_emergency_overrides_existing_topic (pets.test_chat.ReferenceTests.test_emergency_overrides_existing_topic) ... ok
+test_every_entry_has_valid_source_and_selectable_alias (pets.test_chat.ReferenceTests.test_every_entry_has_valid_source_and_selectable_alias) ... ok
+test_followups_persist_and_do_not_repeat_duration (pets.test_chat.ReferenceTests.test_followups_persist_and_do_not_repeat_duration) ... ok
+test_medication_no_dose_and_prompt_injection_has_no_effect (pets.test_chat.ReferenceTests.test_medication_no_dose_and_prompt_injection_has_no_effect) ... ok
+test_negation_and_historical_or_hypothetical_flags (pets.test_chat.ReferenceTests.test_negation_and_historical_or_hypothetical_flags) ... ok
+test_species_references_and_routine_care (pets.test_chat.ReferenceTests.test_species_references_and_routine_care) ... ok
+test_unknown_is_not_fabricated_or_recorded_as_symptom (pets.test_chat.ReferenceTests.test_unknown_is_not_fabricated_or_recorded_as_symptom) ... ok
+test_urine_followup_escalates (pets.test_chat.ReferenceTests.test_urine_followup_escalates) ... ok
+test_ca_enables_hostname_verification (pets.test_cloud_config.CloudConfigTests.test_ca_enables_hostname_verification) ... ok
+test_direct_photo_urls_are_not_available (pets.test_cloud_config.CloudConfigTests.test_direct_photo_urls_are_not_available) ... ok
+test_insecure_or_credentialed_endpoint_rejected (pets.test_cloud_config.CloudConfigTests.test_insecure_or_credentialed_endpoint_rejected) ... ok
+test_missing_fields_fail_without_exposing_values (pets.test_cloud_config.CloudConfigTests.test_missing_fields_fail_without_exposing_values) ... ok
+test_remote_configuration_keeps_password_and_private_storage (pets.test_cloud_config.CloudConfigTests.test_remote_configuration_keeps_password_and_private_storage) ... ok
+test_assigned_hostname_is_used_without_a_manual_url (pets.test_cloud_config.RenderOriginTests.test_assigned_hostname_is_used_without_a_manual_url) ... ok
+test_explicit_custom_domain_is_preserved (pets.test_cloud_config.RenderOriginTests.test_explicit_custom_domain_is_preserved) ... ok
+test_untrusted_host_and_non_render_environment (pets.test_cloud_config.RenderOriginTests.test_untrusted_host_and_non_render_environment) ... ok
+test_cross_species_reference_rejected (pets.test_gemini.GeminiEngineTests.test_cross_species_reference_rejected) ... ok
+test_distinct_failure_notices_do_not_leak_raw_provider_errors (pets.test_gemini.GeminiEngineTests.test_distinct_failure_notices_do_not_leak_raw_provider_errors) ... ok
+test_errors_no_retry_no_secret_or_provider_body_leak (pets.test_gemini.GeminiEngineTests.test_errors_no_retry_no_secret_or_provider_body_leak) ... ok
+test_hair_fall_does_not_need_keyword_match_and_keeps_prior_context (pets.test_gemini.GeminiEngineTests.test_hair_fall_does_not_need_keyword_match_and_keeps_prior_context) ... ok
+test_missing_key_or_free_tier_confirmation_never_calls_network (pets.test_gemini.GeminiEngineTests.test_missing_key_or_free_tier_confirmation_never_calls_network) ... ok
+test_output_validation_rejects_fabricated_sources_links_doses_and_truncation (pets.test_gemini.GeminiEngineTests.test_output_validation_rejects_fabricated_sources_links_doses_and_truncation) ... ok
+test_recent_history_bounded_and_obvious_contact_details_removed (pets.test_gemini.GeminiEngineTests.test_recent_history_bounded_and_obvious_contact_details_removed) ... ok
+test_request_headers_fixed_endpoint_and_schema (pets.test_gemini.GeminiEngineTests.test_request_headers_fixed_endpoint_and_schema) ... ok
+test_schema_prevents_excess_steps_and_unsupported_source_ids (pets.test_gemini.GeminiEngineTests.test_schema_prevents_excess_steps_and_unsupported_source_ids) ... ok
+test_bad_large_small_and_animated_inputs (pets.test_images.ImageInputTests.test_bad_large_small_and_animated_inputs) ... ok
+test_memory_optimization_preserves_preprocessing_pixels (pets.test_images.ImageInputTests.test_memory_optimization_preserves_preprocessing_pixels) ... ok
+test_metadata_stripped_before_inference (pets.test_images.ImageInputTests.test_metadata_stripped_before_inference) ... ok
+test_square_letterbox_and_orientation (pets.test_images.ImageInputTests.test_square_letterbox_and_orientation) ... ok
+test_guided_choices_progress_and_preserve_context (pets.test_photo_reference.PhotoGuideTests.test_guided_choices_progress_and_preserve_context) ... ok
+test_no_severe_sign_choice_cannot_clear_prior_urgency (pets.test_photo_reference.PhotoGuideTests.test_no_severe_sign_choice_cannot_clear_prior_urgency) ... ok
+test_other_photo_categories_and_general_chat (pets.test_photo_reference.PhotoGuideTests.test_other_photo_categories_and_general_chat) ... ok
+test_photo_topic_cannot_hide_a_new_food_concern (pets.test_photo_reference.PhotoGuideTests.test_photo_topic_cannot_hide_a_new_food_concern) ... ok
+test_urgent_choice_and_free_text_interrupt_guide (pets.test_photo_reference.PhotoGuideTests.test_urgent_choice_and_free_text_interrupt_guide) ... ok
+test_folding_unicode_preserves_content (pets.test_planner.CalendarFormatTests.test_folding_unicode_preserves_content) ... ok
+test_provider_diagnostics_are_safe_and_distinct (pets.test_planner.CalendarFormatTests.test_provider_diagnostics_are_safe_and_distinct) ... ok
+test_exception_releases_upload_slot (pets.test_upload_budget.UploadBudgetTests.test_exception_releases_upload_slot) ... ok
+test_overlapping_upload_rejected_without_processing_and_get_still_works (pets.test_upload_budget.UploadBudgetTests.test_overlapping_upload_rejected_without_processing_and_get_still_works) ... ok
+
+----------------------------------------------------------------------
+Ran 143 tests in 65.670s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).

@@ -72,3 +72,7 @@ Follow the [deployment guide](docs/deployment.md). A local Linux stress test pas
 - [Model evaluation and limitations](docs/model-card.md)
 - [Reports and calendar reminders](docs/care-planner.md)
 - [Care chat and fallback](docs/pet-chat.md)
+
+## Review evidence
+
+[Dataset sources, training method, model scores and test report](docs/review-evidence/README.md).

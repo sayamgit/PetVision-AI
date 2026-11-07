@@ -42,13 +42,14 @@ def release_files():
 DATASET_FILES = (
     'Pet_vision_DS.zip', 'PetVision_dataset_v2.zip', 'README.md',
     'CURATION_POLICY.md', 'checksums.json', 'training_manifest.json',
-    'verify_dataset.py',
+    'verify_dataset.py', 'PetVision_Colab_Training_v2.ipynb',
 )
 
 
 def repository_files():
     """Include review datasets in Git, but keep them out of deployment packages."""
     paths = release_files()
+    paths.extend(ROOT/name for name in ('docs/review-evidence/README.md', 'docs/review-evidence/test-report-20261107.txt'))
     for name in DATASET_FILES:
         path = ROOT/'dataset'/name
         if not path.is_file() or path.is_symlink() or not path.resolve().is_relative_to(ROOT.resolve()):

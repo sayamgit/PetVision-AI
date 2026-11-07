@@ -20,6 +20,7 @@
 !/dataset/checksums.json
 !/dataset/training_manifest.json
 !/dataset/verify_dataset.py
+!/dataset/PetVision_Colab_Training_v2.ipynb
 
 /docs/*
 !/docs/app-setup.md
@@ -31,6 +32,10 @@
 !/docs/pet-chat.md
 !/docs/verification-20261021.md
 !/docs/supabase-setup.sql
+!/docs/review-evidence/
+/docs/review-evidence/*
+!/docs/review-evidence/README.md
+!/docs/review-evidence/test-report-20261107.txt
 
 /ml/*
 !/ml/artifacts/

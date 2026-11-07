@@ -54,3 +54,7 @@ Canonical training manifest SHA-256: `b1bac2c9bf58742879cce38ddb3fa1dd8d5522ae6f
 Saved model results: [cat](../ml/artifacts/curated-v2/cat/test_metrics.json), [dog](../ml/artifacts/curated-v2/dog/test_metrics.json). Cat: 49/81 correct (60.5%); dog: 55/78 correct (70.5%). These are saved experimental scores, not a veterinary diagnostic accuracy claim.
 
 Source/provenance review and archive verification: 6 November 2026. Docker's existing allowlist excludes this directory, so dataset archives are not included in the deployed application image.
+
+## Training and review evidence
+
+The [original v2 Colab notebook](PetVision_Colab_Training_v2.ipynb) contains the training procedure and fixed manifest. It has no stored execution outputs. See the [review evidence](../docs/review-evidence/README.md) for class-level metrics, confusion matrices, agent design and the full 143-test report.
